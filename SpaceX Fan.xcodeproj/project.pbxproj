@@ -13,6 +13,11 @@
 		D65041802716E3F10054F8CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D650417E2716E3F10054F8CE /* Main.storyboard */; };
 		D65041822716E3F20054F8CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D65041812716E3F20054F8CE /* Assets.xcassets */; };
 		D65041852716E3F20054F8CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D65041832716E3F20054F8CE /* LaunchScreen.storyboard */; };
+		D650419B2716E7980054F8CE /* Muli-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D65041922716E7980054F8CE /* Muli-Bold.ttf */; };
+		D650419D2716E7980054F8CE /* Muli-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D65041942716E7980054F8CE /* Muli-SemiBold.ttf */; };
+		D65041A22716E7A20054F8CE /* Muli.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D65041A12716E7A20054F8CE /* Muli.ttf */; };
+		D65041A52716E7B70054F8CE /* nasalization-rg.otf in Resources */ = {isa = PBXBuildFile; fileRef = D65041A42716E7B70054F8CE /* nasalization-rg.otf */; };
+		D65041AF2716EA0F0054F8CE /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D65041AE2716EA0F0054F8CE /* Roboto-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		D65041812716E3F20054F8CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D65041842716E3F20054F8CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D65041862716E3F20054F8CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D65041922716E7980054F8CE /* Muli-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Bold.ttf"; sourceTree = "<group>"; };
+		D65041942716E7980054F8CE /* Muli-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-SemiBold.ttf"; sourceTree = "<group>"; };
+		D65041A12716E7A20054F8CE /* Muli.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Muli.ttf; sourceTree = "<group>"; };
+		D65041A42716E7B70054F8CE /* nasalization-rg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nasalization-rg.otf"; sourceTree = "<group>"; };
+		D65041AE2716EA0F0054F8CE /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,7 @@
 		D65041772716E3F10054F8CE /* SpaceX Fan */ = {
 			isa = PBXGroup;
 			children = (
+				D650418D2716E7400054F8CE /* Fonts */,
 				D65041782716E3F10054F8CE /* AppDelegate.swift */,
 				D650417A2716E3F10054F8CE /* SceneDelegate.swift */,
 				D650417C2716E3F10054F8CE /* ViewController.swift */,
@@ -65,6 +76,42 @@
 				D65041862716E3F20054F8CE /* Info.plist */,
 			);
 			path = "SpaceX Fan";
+			sourceTree = "<group>";
+		};
+		D650418D2716E7400054F8CE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D65041B12716EA170054F8CE /* Roboto */,
+				D65041A82716E7E10054F8CE /* Nasalization */,
+				D65041A72716E7CE0054F8CE /* Muli */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D65041A72716E7CE0054F8CE /* Muli */ = {
+			isa = PBXGroup;
+			children = (
+				D65041A12716E7A20054F8CE /* Muli.ttf */,
+				D65041922716E7980054F8CE /* Muli-Bold.ttf */,
+				D65041942716E7980054F8CE /* Muli-SemiBold.ttf */,
+			);
+			path = Muli;
+			sourceTree = "<group>";
+		};
+		D65041A82716E7E10054F8CE /* Nasalization */ = {
+			isa = PBXGroup;
+			children = (
+				D65041A42716E7B70054F8CE /* nasalization-rg.otf */,
+			);
+			path = Nasalization;
+			sourceTree = "<group>";
+		};
+		D65041B12716EA170054F8CE /* Roboto */ = {
+			isa = PBXGroup;
+			children = (
+				D65041AE2716EA0F0054F8CE /* Roboto-Medium.ttf */,
+			);
+			path = Roboto;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,9 +171,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D65041AF2716EA0F0054F8CE /* Roboto-Medium.ttf in Resources */,
 				D65041852716E3F20054F8CE /* LaunchScreen.storyboard in Resources */,
 				D65041822716E3F20054F8CE /* Assets.xcassets in Resources */,
+				D650419D2716E7980054F8CE /* Muli-SemiBold.ttf in Resources */,
 				D65041802716E3F10054F8CE /* Main.storyboard in Resources */,
+				D650419B2716E7980054F8CE /* Muli-Bold.ttf in Resources */,
+				D65041A22716E7A20054F8CE /* Muli.ttf in Resources */,
+				D65041A52716E7B70054F8CE /* nasalization-rg.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +341,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9H8NRK4XM5;
 				INFOPLIST_FILE = "SpaceX Fan/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +361,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9H8NRK4XM5;
 				INFOPLIST_FILE = "SpaceX Fan/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
