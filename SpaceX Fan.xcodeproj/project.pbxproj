@@ -25,6 +25,7 @@
 		D67696E42718CD2700A3838C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67696E32718CD2700A3838C /* Constants.swift */; };
 		D67696E72718CDC600A3838C /* UpcomingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67696E62718CDC600A3838C /* UpcomingTableViewCell.swift */; };
 		D67696EB2718CDDC00A3838C /* RocketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67696EA2718CDDC00A3838C /* RocketTableViewCell.swift */; };
+		D67696EE2718E09300A3838C /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67696ED2718E09300A3838C /* UIImage+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		D67696E32718CD2700A3838C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D67696E62718CDC600A3838C /* UpcomingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingTableViewCell.swift; sourceTree = "<group>"; };
 		D67696EA2718CDDC00A3838C /* RocketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketTableViewCell.swift; sourceTree = "<group>"; };
+		D67696ED2718E09300A3838C /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				D65041862716E3F20054F8CE /* Info.plist */,
 				D67696D12718CB6B00A3838C /* Views */,
 				D67696E32718CD2700A3838C /* Constants.swift */,
+				D67696ED2718E09300A3838C /* UIImage+Extension.swift */,
 			);
 			path = "SpaceX Fan";
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				D65041792716E3F10054F8CE /* AppDelegate.swift in Sources */,
 				D67696E72718CDC600A3838C /* UpcomingTableViewCell.swift in Sources */,
 				D650417B2716E3F10054F8CE /* SceneDelegate.swift in Sources */,
+				D67696EE2718E09300A3838C /* UIImage+Extension.swift in Sources */,
 				D67696E42718CD2700A3838C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
