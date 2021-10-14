@@ -13,11 +13,7 @@ class RocketsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let story = UIStoryboard(name: "Main", bundle: nil)
-        let vc = story.instantiateViewController(withIdentifier: Constants.favoritesStoryboardId)
-                
-                navigationController?.pushViewController(vc, animated: true)
-        
+    
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -33,6 +29,21 @@ class RocketsViewController: UIViewController {
         self.navigationController?.navigationBar.topItem?.title = Constants.rocketsTitle
         let attributes = [NSAttributedString.Key.font: UIFont(name: "Muli-SemiBold", size: 17)!]
         UINavigationBar.appearance().titleTextAttributes = attributes
+    }
+    
+    @IBAction func tabBarClicked(_ sender: UIButton) {
+        if sender.tag == 1 {
+            let story = UIStoryboard(name: "Main", bundle: nil)
+            let vc = story.instantiateViewController(withIdentifier: Constants.favoritesStoryboardId)
+                    
+            navigationController?.pushViewController(vc, animated: false)
+            
+        } else if sender.tag == 2 {
+            let story = UIStoryboard(name: "Main", bundle: nil)
+            let vc = story.instantiateViewController(withIdentifier: Constants.upcomingStoryboardId)
+                    
+            navigationController?.pushViewController(vc, animated: false)
+        }
     }
 }
 

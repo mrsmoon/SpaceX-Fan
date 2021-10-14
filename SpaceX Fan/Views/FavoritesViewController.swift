@@ -34,6 +34,21 @@ class FavoritesViewController: UIViewController {
         let attributes = [NSAttributedString.Key.font: UIFont(name: "Muli-SemiBold", size: 17)!]
         UINavigationBar.appearance().titleTextAttributes = attributes
     }
+    
+    @IBAction func tabBarClicked(_ sender: UIButton) {
+        if sender.tag == 0 {
+            let story = UIStoryboard(name: "Main", bundle: nil)
+            let vc = story.instantiateViewController(withIdentifier: Constants.rocketsStoryboardId)
+                    
+            navigationController?.pushViewController(vc, animated: false)
+            
+        } else if sender.tag == 2 {
+            let story = UIStoryboard(name: "Main", bundle: nil)
+            let vc = story.instantiateViewController(withIdentifier: Constants.upcomingStoryboardId)
+                    
+            navigationController?.pushViewController(vc, animated: false)
+        }
+    }
 }
 
 extension FavoritesViewController: UITableViewDelegate {

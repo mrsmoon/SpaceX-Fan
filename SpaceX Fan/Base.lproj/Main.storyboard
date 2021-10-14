@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +18,7 @@
         <!--SpaceX Rockets-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RocketsViewController" customModule="SpaceX_Fan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RocketsVC" id="BYZ-38-t0r" customClass="RocketsViewController" customModule="SpaceX_Fan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -101,17 +102,77 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eh3-EY-oIe">
+                                <rect key="frame" x="19" y="816" width="376" height="50"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="6pp-ys-fK8">
+                                        <rect key="frame" x="0.0" y="0.0" width="376" height="50"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1cu-z4-k6E">
+                                        <rect key="frame" x="44" y="1.5" width="288" height="47"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bon-nn-dP4">
+                                                <rect key="frame" x="0.0" y="0.0" width="48" height="47"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="48" id="AFb-KP-NxP"/>
+                                                    <constraint firstAttribute="height" constant="47" id="twa-nN-X4M"/>
+                                                </constraints>
+                                                <state key="normal" image="barsTabBarElementsItemsActivePressed"/>
+                                                <connections>
+                                                    <action selector="tabBarClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sRW-D3-QOt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nfq-ZY-q32">
+                                                <rect key="frame" x="120" y="0.0" width="48" height="47"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="47" id="sF8-Ok-hb9"/>
+                                                    <constraint firstAttribute="width" constant="48" id="yLZ-Kd-1BZ"/>
+                                                </constraints>
+                                                <state key="normal" image="barsTabBarElementsItemsEnabled"/>
+                                                <connections>
+                                                    <action selector="tabBarClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eQr-fO-wBn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="res-Kf-a7q">
+                                                <rect key="frame" x="240" y="0.0" width="48" height="47"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="48" id="8Vq-Fp-v6i"/>
+                                                    <constraint firstAttribute="height" constant="47" id="q8t-WK-5uw"/>
+                                                </constraints>
+                                                <state key="normal" image="barsTabBarElementsItemsEnabled-1"/>
+                                                <connections>
+                                                    <action selector="tabBarClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xYf-ou-dBm"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="6pp-ys-fK8" firstAttribute="top" secondItem="Eh3-EY-oIe" secondAttribute="top" id="0gZ-TM-Jzv"/>
+                                    <constraint firstItem="1cu-z4-k6E" firstAttribute="centerY" secondItem="Eh3-EY-oIe" secondAttribute="centerY" id="4BP-Dw-J5M"/>
+                                    <constraint firstItem="6pp-ys-fK8" firstAttribute="leading" secondItem="Eh3-EY-oIe" secondAttribute="leading" id="5QR-bn-Nhf"/>
+                                    <constraint firstItem="1cu-z4-k6E" firstAttribute="leading" secondItem="Eh3-EY-oIe" secondAttribute="leading" constant="44" id="5cN-mZ-mRx"/>
+                                    <constraint firstAttribute="trailing" secondItem="6pp-ys-fK8" secondAttribute="trailing" id="BDR-Mc-5IM"/>
+                                    <constraint firstAttribute="bottom" secondItem="6pp-ys-fK8" secondAttribute="bottom" id="GDh-Bj-aIb"/>
+                                    <constraint firstAttribute="trailing" secondItem="1cu-z4-k6E" secondAttribute="trailing" constant="44" id="Gst-q6-Tvy"/>
+                                    <constraint firstAttribute="height" constant="50" id="Oth-4i-nfv"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Eh3-EY-oIe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="19" id="1Qy-ux-zt9"/>
                             <constraint firstItem="lPL-GY-bCy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5w6-fv-13k"/>
                             <constraint firstItem="lPL-GY-bCy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="21" id="9HQ-dr-Fdd"/>
                             <constraint firstAttribute="trailing" secondItem="UvI-Fi-1Im" secondAttribute="trailingMargin" id="Ui1-hp-DLY"/>
                             <constraint firstItem="UvI-Fi-1Im" firstAttribute="topMargin" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Z7B-Zb-Xl7"/>
                             <constraint firstItem="UvI-Fi-1Im" firstAttribute="leadingMargin" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="a7y-fX-aVA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Eh3-EY-oIe" secondAttribute="trailing" constant="19" id="adn-UB-Wez"/>
                             <constraint firstAttribute="bottom" secondItem="UvI-Fi-1Im" secondAttribute="bottomMargin" id="d90-fk-1vW"/>
                             <constraint firstItem="lPL-GY-bCy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dZg-kP-qW7"/>
+                            <constraint firstAttribute="bottom" secondItem="Eh3-EY-oIe" secondAttribute="bottom" constant="30" id="mZG-iC-Ubw"/>
                             <constraint firstAttribute="bottom" secondItem="lPL-GY-bCy" secondAttribute="bottom" id="nza-Kb-o3Z"/>
                         </constraints>
                     </view>
@@ -124,24 +185,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-528.98550724637687" y="166.74107142857142"/>
-        </scene>
-        <!--Upcoming View Controller-->
-        <scene sceneID="qI4-RF-O2I">
-            <objects>
-                <viewController id="fxT-xq-fv0" customClass="UpcomingViewController" customModule="SpaceX_Fan" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kvg-D4-8hx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="fjd-LR-27t"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <connections>
-                        <segue destination="k9g-E4-Yxy" kind="showDetail" identifier="UpcomingSegue" id="hN8-tL-Yix"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pn9-Gf-XBn" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="726.08695652173924" y="166.74107142857142"/>
         </scene>
         <!--Rocket Detail View Controller-->
         <scene sceneID="Ng3-OA-5i2">
@@ -196,10 +239,10 @@
             </objects>
             <point key="canvasLocation" x="-1278" y="167"/>
         </scene>
-        <!--SpaceX Rockets-->
+        <!--Favorites View Controller-->
         <scene sceneID="tzU-VQ-fGh">
             <objects>
-                <viewController storyboardIdentifier="FavoritesVC" id="2My-YX-6IZ" customClass="FavoritesViewController" customModule="SpaceX_Fan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavoritesVC" id="2My-YX-6IZ" userLabel="Favorites View Controller" customClass="FavoritesViewController" customModule="SpaceX_Fan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ffj-xw-HWV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -283,6 +326,63 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D7i-HJ-0NI">
+                                <rect key="frame" x="19" y="816" width="376" height="50"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="rQJ-yG-5Ru">
+                                        <rect key="frame" x="0.0" y="0.0" width="376" height="50"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tWq-Y5-oaS">
+                                        <rect key="frame" x="44" y="1.5" width="288" height="47"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dm6-fg-cdg">
+                                                <rect key="frame" x="0.0" y="0.0" width="48" height="47"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="48" id="89h-Tk-SCA"/>
+                                                    <constraint firstAttribute="height" constant="47" id="QgL-xc-k4T"/>
+                                                </constraints>
+                                                <state key="normal" image="barsTabBarElementsItemsEnabled-2"/>
+                                                <connections>
+                                                    <action selector="tabBarClicked:" destination="2My-YX-6IZ" eventType="touchUpInside" id="amO-I8-0xm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSu-f7-a5z">
+                                                <rect key="frame" x="120" y="0.0" width="48" height="47"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="47" id="DcY-LW-7Nj"/>
+                                                    <constraint firstAttribute="width" constant="48" id="mAP-d0-VEw"/>
+                                                </constraints>
+                                                <state key="normal" image="barsTabBarElementsItemsActivePressed-1"/>
+                                                <connections>
+                                                    <action selector="tabBarClicked:" destination="2My-YX-6IZ" eventType="touchUpInside" id="DAL-bL-vQk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j9s-0m-TkM">
+                                                <rect key="frame" x="240" y="0.0" width="48" height="47"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="48" id="eDi-jy-SCS"/>
+                                                    <constraint firstAttribute="height" constant="47" id="kn7-LZ-KRe"/>
+                                                </constraints>
+                                                <state key="normal" image="barsTabBarElementsItemsEnabled-1"/>
+                                                <connections>
+                                                    <action selector="tabBarClicked:" destination="2My-YX-6IZ" eventType="touchUpInside" id="Yw7-6Z-IGc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="rQJ-yG-5Ru" secondAttribute="bottom" id="CJB-Nn-wJS"/>
+                                    <constraint firstAttribute="trailing" secondItem="tWq-Y5-oaS" secondAttribute="trailing" constant="44" id="FkJ-Dh-tcG"/>
+                                    <constraint firstItem="rQJ-yG-5Ru" firstAttribute="top" secondItem="D7i-HJ-0NI" secondAttribute="top" id="T0o-Yj-6nI"/>
+                                    <constraint firstItem="tWq-Y5-oaS" firstAttribute="leading" secondItem="D7i-HJ-0NI" secondAttribute="leading" constant="44" id="dyy-FR-Oc5"/>
+                                    <constraint firstItem="tWq-Y5-oaS" firstAttribute="centerY" secondItem="D7i-HJ-0NI" secondAttribute="centerY" id="fSt-N6-XNQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="rQJ-yG-5Ru" secondAttribute="trailing" id="ojf-pH-yyV"/>
+                                    <constraint firstItem="rQJ-yG-5Ru" firstAttribute="leading" secondItem="D7i-HJ-0NI" secondAttribute="leading" id="p3W-fR-WZ7"/>
+                                    <constraint firstAttribute="height" constant="50" id="uGE-wF-h1B"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CQu-Pe-b8t"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -291,24 +391,94 @@
                             <constraint firstAttribute="bottom" secondItem="SV2-6F-SWk" secondAttribute="bottomMargin" id="CJn-Q0-sYt"/>
                             <constraint firstItem="SV2-6F-SWk" firstAttribute="leadingMargin" secondItem="ffj-xw-HWV" secondAttribute="leading" id="O7c-2z-0Xg"/>
                             <constraint firstAttribute="bottom" secondItem="yy4-b9-gDF" secondAttribute="bottom" id="T74-A8-YeX"/>
+                            <constraint firstItem="D7i-HJ-0NI" firstAttribute="leading" secondItem="CQu-Pe-b8t" secondAttribute="leading" constant="19" id="YRU-uD-RPy"/>
+                            <constraint firstAttribute="bottom" secondItem="D7i-HJ-0NI" secondAttribute="bottom" constant="30" id="ai1-Fb-LZ7"/>
                             <constraint firstItem="yy4-b9-gDF" firstAttribute="trailing" secondItem="CQu-Pe-b8t" secondAttribute="trailing" id="cmD-2Z-pr3"/>
                             <constraint firstItem="SV2-6F-SWk" firstAttribute="topMargin" secondItem="ffj-xw-HWV" secondAttribute="top" id="dO8-Sz-AT5"/>
                             <constraint firstAttribute="trailing" secondItem="SV2-6F-SWk" secondAttribute="trailingMargin" id="di8-H7-EHn"/>
                             <constraint firstItem="yy4-b9-gDF" firstAttribute="top" secondItem="CQu-Pe-b8t" secondAttribute="top" constant="21" id="kJT-q3-QMi"/>
+                            <constraint firstItem="CQu-Pe-b8t" firstAttribute="trailing" secondItem="D7i-HJ-0NI" secondAttribute="trailing" constant="19" id="kYn-8n-hmq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SpaceX Rockets" id="kCz-VC-yvR"/>
                     <connections>
                         <outlet property="tableView" destination="yy4-b9-gDF" id="M6j-b2-ay1"/>
+                        <segue destination="h2W-M6-81O" kind="showDetail" id="hgV-ij-Nyn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNV-pu-tBK" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="96" y="167"/>
         </scene>
+        <!--Upcoming View Controller-->
+        <scene sceneID="zUE-zV-l9U">
+            <objects>
+                <viewController storyboardIdentifier="UpcomingVC" id="RS1-0X-oRr" userLabel="Upcoming View Controller" customClass="UpcomingDetailViewController" customModule="SpaceX_Fan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UwG-WU-cnL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="en9-gn-Azt">
+                                <rect key="frame" x="-8" y="-52" width="430" height="990"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0hw-xT-P3Z">
+                                <rect key="frame" x="0.0" y="65" width="414" height="831"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RocketCell" rowHeight="149" id="4DK-ar-cpB" customClass="RocketTableViewCell" customModule="SpaceX_Fan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="149"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4DK-ar-cpB" id="Fsu-I9-etS">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="149"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CxJ-Ye-2Av">
+                                                    <rect key="frame" x="8" y="0.0" width="398" height="143"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="S0r-37-ARN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="en9-gn-Azt" firstAttribute="topMargin" secondItem="UwG-WU-cnL" secondAttribute="top" id="1Aa-tr-kGi"/>
+                            <constraint firstAttribute="bottom" secondItem="en9-gn-Azt" secondAttribute="bottomMargin" id="9Ca-ey-0bk"/>
+                            <constraint firstItem="en9-gn-Azt" firstAttribute="leadingMargin" secondItem="UwG-WU-cnL" secondAttribute="leading" id="DGk-dg-Q1V"/>
+                            <constraint firstAttribute="bottom" secondItem="0hw-xT-P3Z" secondAttribute="bottom" id="LcF-cQ-L5h"/>
+                            <constraint firstItem="0hw-xT-P3Z" firstAttribute="leading" secondItem="S0r-37-ARN" secondAttribute="leading" id="Mhm-Dp-3Ge"/>
+                            <constraint firstItem="0hw-xT-P3Z" firstAttribute="top" secondItem="S0r-37-ARN" secondAttribute="top" constant="21" id="kub-yu-9cD"/>
+                            <constraint firstItem="0hw-xT-P3Z" firstAttribute="trailing" secondItem="S0r-37-ARN" secondAttribute="trailing" id="lGn-9P-2SN"/>
+                            <constraint firstAttribute="trailing" secondItem="en9-gn-Azt" secondAttribute="trailingMargin" id="qRq-vT-OZw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="SpaceX Rockets" id="ud5-b4-4eR"/>
+                    <connections>
+                        <outlet property="tableView" destination="0hw-xT-P3Z" id="lCm-Fy-vPg"/>
+                        <segue destination="k9g-E4-Yxy" kind="showDetail" id="56X-Th-rAf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VkS-7R-s4d" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="742" y="167"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hgV-ij-Nyn"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="SpacexFalconHeavyPngTransparentPngCopy" width="308" height="159"/>
+        <image name="bar" width="375" height="92"/>
+        <image name="barsTabBarElementsItemsActivePressed" width="48" height="47"/>
+        <image name="barsTabBarElementsItemsActivePressed-1" width="48" height="47"/>
+        <image name="barsTabBarElementsItemsEnabled" width="48" height="47"/>
+        <image name="barsTabBarElementsItemsEnabled-1" width="48" height="47"/>
+        <image name="barsTabBarElementsItemsEnabled-2" width="48" height="47"/>
         <image name="favoriteStarActive" width="50" height="50"/>
         <image name="frameRocketsIOsEnable" width="367" height="188"/>
         <image name="mainBackground" width="381" height="818"/>

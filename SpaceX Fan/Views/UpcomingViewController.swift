@@ -20,8 +20,6 @@ class UpcomingViewController: UIViewController {
     }
     
     func configureNavigationBar() {
-        self.navigationItem.leftBarButtonItem = nil
-        self.navigationItem.hidesBackButton = true
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true

@@ -16,6 +16,8 @@ class Constants {
     static let upcomingCellIdentifier = "UpcomingCell"
     
     static let favoritesStoryboardId = "FavoritesVC"
+    static let rocketsStoryboardId = "RocketsVC"
+    static let upcomingStoryboardId = "UpcomingVC"
     
     static let rocketsTitle = "SpaceX Rockets"
     static let favoritesTitle = "Favorite Rockets"
