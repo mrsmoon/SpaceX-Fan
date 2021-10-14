@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "6486482399SpacexFalconHeavyPngTransparentPngCopy.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "6486482399SpacexFalconHeavyPngTransparentPngCopy@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "6486482399SpacexFalconHeavyPngTransparentPngCopy@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

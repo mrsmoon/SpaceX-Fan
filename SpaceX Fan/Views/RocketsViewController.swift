@@ -12,9 +12,15 @@ class RocketsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let story = UIStoryboard(name: "Main", bundle: nil)
+        let vc = story.instantiateViewController(withIdentifier: "FavoritesVC")
+        
+        navigationController?.pushViewController(vc, animated: true)
+        
         // Do any additional setup after loading the view.
     }
     
+
 
     /*
     // MARK: - Navigation

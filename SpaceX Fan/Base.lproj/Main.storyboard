@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gni-7p-iu5">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -16,26 +16,38 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UvI-Fi-1Im">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UvI-Fi-1Im" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="2QO-Zp-HBa"/>
+                            <constraint firstItem="UvI-Fi-1Im" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Yzc-O9-g04"/>
+                            <constraint firstItem="UvI-Fi-1Im" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="aRt-nt-PVv"/>
+                            <constraint firstItem="UvI-Fi-1Im" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cep-mn-gat"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Eny-mN-bkd"/>
                     <connections>
                         <segue destination="h2W-M6-81O" kind="showDetail" identifier="RocketSegue" id="9Dd-5D-dRj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1438" y="167"/>
+            <point key="canvasLocation" x="-528.98550724637687" y="166.74107142857142"/>
         </scene>
         <!--Favorites View Controller-->
         <scene sceneID="cKX-gt-64b">
             <objects>
-                <viewController id="z7v-8e-6dK" customClass="FavoritesViewController" customModule="SpaceX_Fan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavoritesVC" id="z7v-8e-6dK" customClass="FavoritesViewController" customModule="SpaceX_Fan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wqk-Ib-iKb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="5WV-HA-geN"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
                         <segue destination="h2W-M6-81O" kind="showDetail" identifier="FavoriteSegue" id="rRk-lv-RDz"/>
@@ -43,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pKT-79-m8R" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-817" y="167"/>
+            <point key="canvasLocation" x="92.753623188405811" y="166.74107142857142"/>
         </scene>
         <!--Upcoming View Controller-->
         <scene sceneID="qI4-RF-O2I">
@@ -61,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pn9-Gf-XBn" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-184" y="167"/>
+            <point key="canvasLocation" x="726.08695652173924" y="166.74107142857142"/>
         </scene>
         <!--Rocket Detail View Controller-->
         <scene sceneID="Ng3-OA-5i2">
@@ -77,7 +89,7 @@
                     <navigationItem key="navigationItem" id="sFe-OI-qCt"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="530" y="167"/>
+            <point key="canvasLocation" x="1439.1304347826087" y="166.74107142857142"/>
         </scene>
         <!--Upcoming Detail View Controller-->
         <scene sceneID="1nE-40-l59">
@@ -92,11 +104,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3rA-v7-BPf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1186" y="167"/>
+            <point key="canvasLocation" x="2095.6521739130435" y="166.74107142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4DT-Dt-hfT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gni-7p-iu5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yQ7-Fz-adc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="OUY-nP-SkM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nhK-4H-Mnu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1278" y="167"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9Dd-5D-dRj"/>
+        <segue reference="rRk-lv-RDz"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
