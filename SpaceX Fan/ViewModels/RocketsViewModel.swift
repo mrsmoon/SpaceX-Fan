@@ -8,7 +8,7 @@
 import Foundation
 
 protocol RocketViewModelDelegate {
-    func rocketsFetched(_ rockets: Rockets)
+    func rocketsFetched()
     func rocketFetchingDidFail()
 }
 
@@ -24,6 +24,8 @@ class RocketViewModel {
     }
     
     let manager = RocketManager.shared
+    var rockets = Rockets()
+    
     var favorites: Favorites {
         return manager.getFavoriteRockets()
     }
@@ -38,7 +40,8 @@ class RocketViewModel {
     func fetchRockets() {
         manager.getAllRockets { (rockets, error) in
             if let rockets = rockets {
-                self.delegate?.rocketsFetched(rockets)
+                self.rockets = rockets
+                self.delegate?.rocketsFetched()
             } else {
                 self.delegate?.rocketFetchingDidFail()
             }

@@ -12,11 +12,14 @@ class RocketsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let viewModel = RocketViewModel()
-    var rockets = Rockets()
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.subscribe()
         configureNavigationBar()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        viewModel.unsubscribe()
     }
 
     override func viewDidLoad() {
@@ -55,8 +58,7 @@ class RocketsViewController: UIViewController {
 }
 
 extension RocketsViewController: RocketViewModelDelegate {
-    func rocketsFetched(_ rockets: Rockets) {
-        self.rockets = rockets
+    func rocketsFetched() {
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
         }
@@ -99,7 +101,7 @@ extension RocketsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.rocketCellIdentifier) as! RocketTableViewCell
-        let rocket = rockets[indexPath.row]
+        let rocket = viewModel.rockets[indexPath.row]
         cell.isFavorite = viewModel.isRocketInFavorites(rocket)
         cell.rocket = rocket
         
@@ -111,6 +113,6 @@ extension RocketsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rockets.count
+        return viewModel.rockets.count
     }
 }
