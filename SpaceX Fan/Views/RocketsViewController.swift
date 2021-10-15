@@ -10,14 +10,21 @@ import UIKit
 class RocketsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    let viewModel = RocketViewModel()
+    var rockets = Rockets()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.subscribe()
+        configureNavigationBar()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
     
         tableView.delegate = self
         tableView.dataSource = self
-        
-        configureNavigationBar()
+        viewModel.delegate = self
     }
     
     func configureNavigationBar() {
@@ -47,6 +54,26 @@ class RocketsViewController: UIViewController {
     }
 }
 
+extension RocketsViewController: RocketViewModelDelegate {
+    func rocketsFetched(_ rockets: Rockets) {
+        self.rockets = rockets
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
+    
+    func rocketFetchingDidFail() {
+        DispatchQueue.main.async { [weak self] in
+            let alert = UIAlertController(title: "Sorry", message: "We are having problem to display SpaceX rockets now. Please try again later.", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(action)
+            
+            self?.present(alert, animated: true, completion: nil)
+        }
+    }
+}
+
 extension RocketsViewController: UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -72,11 +99,18 @@ extension RocketsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.rocketCellIdentifier) as! RocketTableViewCell
+        let rocket = rockets[indexPath.row]
+        cell.isFavorite = viewModel.isRocketInFavorites(rocket)
+        cell.rocket = rocket
+        
+        cell.starClicked = {
+            self.viewModel.updateFavoriteList(withStatusOf: rocket)
+        }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return rockets.count
     }
 }

@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct RocketModel: Codable {
+struct RocketModel: Codable, Hashable {
+    static func == (lhs: RocketModel, rhs: RocketModel) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     private let id: String
     private let name: String
     private let height: Height
@@ -61,7 +65,7 @@ struct RocketModel: Codable {
     }
 }
 
-struct Height: Codable {
+struct Height: Codable, Hashable {
     private let meters: Double
     private let feet: Double
     
@@ -74,7 +78,7 @@ struct Height: Codable {
     }
 }
 
-struct Diameter: Codable {
+struct Diameter: Codable, Hashable {
     private let meters: Double
     private let feet: Double
     
@@ -87,7 +91,7 @@ struct Diameter: Codable {
     }
 }
 
-struct Mass: Codable {
+struct Mass: Codable, Hashable {
     private let kg: Double
     private let lb: Double
     
@@ -100,7 +104,7 @@ struct Mass: Codable {
     }
 }
 
-struct Payload: Codable {
+struct Payload: Codable, Hashable{
     private let id: String
     private let name: String
     private let kg: Double

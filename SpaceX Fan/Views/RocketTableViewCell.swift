@@ -13,6 +13,17 @@ class RocketTableViewCell: UITableViewCell {
     @IBOutlet weak var starButton: UIButton!
     @IBOutlet weak var rocketImage: UIImageView!
     
+    var rocket: RocketModel? {
+        didSet {
+            rocketNameLabel.text = rocket?.getName().uppercased()
+            let starImage = isFavorite ? UIImage.starFill : UIImage.star
+            starButton.setImage(starImage, for: .normal)
+        }
+    }
+    
+    var isFavorite = false
+    
+    var starClicked : (()->Void)? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,6 +42,11 @@ class RocketTableViewCell: UITableViewCell {
         } else {
             starButton.setImage(UIImage.star, for: .normal)
         }
+        
+        if let clicked = starClicked {
+            clicked()
+        }
+        
         
         //TODO: Update favorite rocket list
     }
