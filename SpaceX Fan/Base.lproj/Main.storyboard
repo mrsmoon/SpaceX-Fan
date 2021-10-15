@@ -185,7 +185,7 @@
                     <navigationItem key="navigationItem" title="SpaceX Rockets" id="Eny-mN-bkd"/>
                     <connections>
                         <outlet property="tableView" destination="lPL-GY-bCy" id="GLb-kK-3cf"/>
-                        <segue destination="h2W-M6-81O" kind="showDetail" identifier="RocketSegue" id="9Dd-5D-dRj"/>
+                        <segue destination="h2W-M6-81O" kind="show" identifier="RocketSegue" id="9Dd-5D-dRj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -197,7 +197,7 @@
             <objects>
                 <viewController id="h2W-M6-81O" customClass="RocketDetailViewController" customModule="SpaceX_Fan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PNK-hy-Avx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="mh6-0u-1Fx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -211,13 +211,25 @@
         <!--Upcoming Detail View Controller-->
         <scene sceneID="1nE-40-l59">
             <objects>
-                <viewController id="k9g-E4-Yxy" customClass="UpcomingDetailViewController" customModule="SpaceX_Fan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpcomingDetailVC" id="k9g-E4-Yxy" customClass="UpcomingDetailViewController" customModule="SpaceX_Fan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Ap-00-tD6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="g8X-RA-CJT">
+                                <rect key="frame" x="-8" y="-8" width="430" height="892"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="5pA-0K-Yla"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="g8X-RA-CJT" secondAttribute="bottomMargin" id="KNz-o0-dLI"/>
+                            <constraint firstAttribute="trailing" secondItem="g8X-RA-CJT" secondAttribute="trailingMargin" id="SMR-sp-u7T"/>
+                            <constraint firstItem="g8X-RA-CJT" firstAttribute="topMargin" secondItem="0Ap-00-tD6" secondAttribute="top" id="c8S-wk-pEg"/>
+                            <constraint firstItem="g8X-RA-CJT" firstAttribute="leadingMargin" secondItem="0Ap-00-tD6" secondAttribute="leading" id="tDH-U6-wJl"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="RLF-BG-NaD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3rA-v7-BPf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -409,7 +421,7 @@
                     <navigationItem key="navigationItem" title="SpaceX Rockets" id="kCz-VC-yvR"/>
                     <connections>
                         <outlet property="tableView" destination="yy4-b9-gDF" id="M6j-b2-ay1"/>
-                        <segue destination="h2W-M6-81O" kind="showDetail" id="hgV-ij-Nyn"/>
+                        <segue destination="h2W-M6-81O" kind="show" identifier="FavoriteSegue" id="hgV-ij-Nyn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNV-pu-tBK" sceneMemberID="firstResponder"/>
@@ -487,6 +499,9 @@
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="exploreButtonClicked" destination="4DK-ar-cpB" eventType="touchUpInside" id="GHn-3N-o72"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MARS &amp; BEYOND" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlL-SF-eKr">
                                                             <rect key="frame" x="10" y="86" width="150" height="44"/>
@@ -511,6 +526,9 @@
                                                                 <color key="titleColor" red="0.34509803921568627" green="0.98431372549019602" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="exploreButtonClicked" destination="4DK-ar-cpB" eventType="touchUpInside" id="pXm-Ck-7Gq"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -637,7 +655,7 @@
                     <navigationItem key="navigationItem" title="SpaceX Rockets" id="ud5-b4-4eR"/>
                     <connections>
                         <outlet property="tableView" destination="0hw-xT-P3Z" id="enA-JN-Pd3"/>
-                        <segue destination="k9g-E4-Yxy" kind="showDetail" id="56X-Th-rAf"/>
+                        <segue destination="k9g-E4-Yxy" kind="show" identifier="UpcomingSegue" id="56X-Th-rAf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VkS-7R-s4d" sceneMemberID="firstResponder"/>

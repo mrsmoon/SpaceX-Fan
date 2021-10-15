@@ -17,6 +17,8 @@ class UpcomingTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionBottomLabel: UILabel!
     @IBOutlet weak var upcomingImage: UIImageView!
     
+    var exploreClicked : (()->Void)? = nil
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -35,7 +37,9 @@ class UpcomingTableViewCell: UITableViewCell {
     }
     
     @IBAction func exploreButtonClicked() {
-        
+        if let clicked = exploreClicked {
+            clicked()
+        }
     }
     
     //TODO: Send item info as a parameter here

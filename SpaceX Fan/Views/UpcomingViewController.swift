@@ -53,22 +53,32 @@ extension UpcomingViewController: UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
 }
 
 extension UpcomingViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.upcomingCellIdentifier) as! UpcomingTableViewCell
+        
+        cell.exploreClicked = {
+            self.performSegue(withIdentifier: Constants.upcomingSegueIdentifier, sender: self)
+        }
         cell.populateCell(isCellIndexEven: indexPath.row.isMultiple(of: 2))
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.upcomingSegueIdentifier {
+            if let destinationVC = segue.destination as? UpcomingDetailViewController {
+                //TODO: Send upcoming object here
+                //destinationVC.upcomingLaunch =
+            }
+        }
     }
 }
 
