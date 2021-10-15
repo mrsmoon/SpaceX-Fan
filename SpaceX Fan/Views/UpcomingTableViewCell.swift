@@ -42,8 +42,7 @@ class UpcomingTableViewCell: UITableViewCell {
         }
     }
     
-    //TODO: Send item info as a parameter here
-    func populateCell(isCellIndexEven: Bool) {
+    func populateCell(with upcoming: UpcomingModel, isCellIndexEven: Bool) {
         if isCellIndexEven {
             exploreButtonColored.isHidden = true
             titleBottomLabel.isHidden = true
@@ -51,6 +50,11 @@ class UpcomingTableViewCell: UITableViewCell {
             exploreButtonWhite.isHidden = false
             titleTopLabel.isHidden = false
             descriptionTopLabel.isHidden = false
+            
+            titleTopLabel.text = upcoming.getName().uppercased()
+            descriptionTopLabel.text = ""
+            
+            
         } else {
             exploreButtonWhite.isHidden = true
             titleTopLabel.isHidden = true
@@ -58,6 +62,9 @@ class UpcomingTableViewCell: UITableViewCell {
             exploreButtonColored.isHidden = false
             titleBottomLabel.isHidden = false
             descriptionBottomLabel.isHidden = false
+            
+            titleBottomLabel.text = upcoming.getName().uppercased()
+            descriptionBottomLabel.text = ""
         }
     }
     

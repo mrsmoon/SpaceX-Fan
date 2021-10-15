@@ -11,7 +11,10 @@ class UpcomingViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    let viewModel = UpcomingViewModel()
+    
     override func viewWillAppear(_ animated: Bool) {
+        viewModel.subscribe()
         configureNavigationBar()
     }
 
@@ -20,6 +23,7 @@ class UpcomingViewController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
+        viewModel.delegate = self
     }
     
     func configureNavigationBar() {
@@ -49,6 +53,14 @@ class UpcomingViewController: UIViewController {
     }
 }
 
+extension UpcomingViewController: UpcomingViewModelDelegate {
+    func upcomingsFetched() {
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
+}
+
 extension UpcomingViewController: UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -60,25 +72,20 @@ extension UpcomingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.upcomingCellIdentifier) as! UpcomingTableViewCell
         
+        let upcomingLaunch = viewModel.upcomings[indexPath.row]
+        
         cell.exploreClicked = {
+            self.viewModel.selectedUpcoming = upcomingLaunch
             self.performSegue(withIdentifier: Constants.upcomingSegueIdentifier, sender: self)
         }
-        cell.populateCell(isCellIndexEven: indexPath.row.isMultiple(of: 2))
+        
+        cell.populateCell(with: upcomingLaunch, isCellIndexEven: indexPath.row.isMultiple(of: 2))
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.upcomingSegueIdentifier {
-            if let destinationVC = segue.destination as? UpcomingDetailViewController {
-                //TODO: Send upcoming object here
-                //destinationVC.upcomingLaunch =
-            }
-        }
+        return viewModel.upcomings.count
     }
 }
 

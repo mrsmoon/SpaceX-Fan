@@ -26,6 +26,7 @@ class RocketManager: RocketProtocol {
     private var latestRockets: Rockets?
     private var favoriteRockets = Favorites()
     private var currentRocket: Rocket?
+    private var currentUpcomingLaunch: UpcomingModel?
     
     //MARK: - All Rockets
     
@@ -39,6 +40,14 @@ class RocketManager: RocketProtocol {
     
     func setCurrentRocket(_ rocket: Rocket) {
         currentRocket = rocket
+    }
+    
+    func getCurrentUpcomingLaunch() -> UpcomingModel? {
+        return currentUpcomingLaunch
+    }
+    
+    func setCurrentUpcomingLaunch(_ upcoming: UpcomingModel) {
+        currentUpcomingLaunch = upcoming
     }
     
     func getAllRockets(completionHandler: @escaping RocketsCallBack) {
