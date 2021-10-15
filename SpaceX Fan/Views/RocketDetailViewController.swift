@@ -16,7 +16,8 @@ class RocketDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = Constants.rocketsTitle
+        //TODO: Change title according to rocket name
+        title = "FALCON 9"
     }
     
     func configureNavigationBar() {
@@ -26,8 +27,9 @@ class RocketDetailViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.topItem?.title = Constants.rocketsTitle
-        let attributes = [NSAttributedString.Key.font: UIFont(name: "Muli-SemiBold", size: 17)!]
-        UINavigationBar.appearance().titleTextAttributes = attributes
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedString.Key.font: UIFont(name: Constants.nasalizationFont, size: 16)!,
+             NSAttributedString.Key.foregroundColor: UIColor.exploreButtonBorderColor]
     }
     
     @objc func backTapped() {

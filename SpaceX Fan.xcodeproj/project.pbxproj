@@ -65,6 +65,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D6344E642719A3B000B24CA4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D67696ED2718E09300A3838C /* UIImage+Extension.swift */,
+				D6344E612719068500B24CA4 /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D650416C2716E3F10054F8CE = {
 			isa = PBXGroup;
 			children = (
@@ -93,8 +102,7 @@
 				D65041862716E3F20054F8CE /* Info.plist */,
 				D67696D12718CB6B00A3838C /* Views */,
 				D67696E32718CD2700A3838C /* Constants.swift */,
-				D67696ED2718E09300A3838C /* UIImage+Extension.swift */,
-				D6344E612719068500B24CA4 /* UIColor+Extension.swift */,
+				D6344E642719A3B000B24CA4 /* Extensions */,
 			);
 			path = "SpaceX Fan";
 			sourceTree = "<group>";

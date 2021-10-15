@@ -197,11 +197,11 @@
             <objects>
                 <viewController id="h2W-M6-81O" customClass="RocketDetailViewController" customModule="SpaceX_Fan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PNK-hy-Avx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="f4S-3F-hgX">
-                                <rect key="frame" x="-8" y="-96" width="430" height="1034"/>
+                                <rect key="frame" x="-8" y="-8" width="430" height="892"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mh6-0u-1Fx"/>
@@ -315,7 +315,9 @@
                                                                 <constraint firstAttribute="width" constant="50" id="UQs-q0-aFS"/>
                                                                 <constraint firstAttribute="height" constant="50" id="uCA-Eu-Qzh"/>
                                                             </constraints>
-                                                            <state key="normal" title="Button" image="favoriteStarActive"/>
+                                                            <state key="normal" title="Button" image="favoriteStarActive">
+                                                                <color key="titleColor" red="0.34509803921568627" green="0.98431372549019602" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </state>
                                                             <connections>
                                                                 <action selector="starPressed:" destination="FEu-Cp-ITd" eventType="touchUpInside" id="3XS-FW-n0s"/>
                                                             </connections>
@@ -675,7 +677,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9Dd-5D-dRj"/>
+        <segue reference="hgV-ij-Nyn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SpacexFalconHeavyPngTransparentPngCopy" width="308" height="159"/>

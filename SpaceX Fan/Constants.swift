@@ -22,4 +22,6 @@ class Constants {
     static let rocketsTitle = "SpaceX Rockets"
     static let favoritesTitle = "Favorite Rockets"
     static let upcomingTitle = "Upcoming Launchers"
+    
+    static let nasalizationFont = "NasalizationRg-Regular"
 }
