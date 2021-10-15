@@ -12,7 +12,9 @@ class RocketDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         configureNavigationBar()
     }
-
+    
+    var rocket: Rocket?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

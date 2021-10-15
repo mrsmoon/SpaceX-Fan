@@ -32,6 +32,12 @@ class RocketViewModel {
     
     var delegate: RocketViewModelDelegate?
     
+    var selectedRocket: Rocket? {
+        didSet {
+            manager.setCurrentRocket(selectedRocket!)
+        }
+    }
+    
     func saveFavoriteRockets() {
         //TODO: Realm - save
         manager.saveFavorites()

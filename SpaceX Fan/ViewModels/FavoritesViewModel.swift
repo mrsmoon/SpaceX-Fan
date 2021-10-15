@@ -21,6 +21,12 @@ class FavoritesViewModel {
     
     let manager = RocketManager.shared
     
+    var selectedRocket: Rocket? {
+        didSet {
+            manager.setCurrentRocket(selectedRocket!)
+        }
+    }
+    
     func getFavorites() {
         currentFavorites = Array(manager.getFavoriteRockets())
     }

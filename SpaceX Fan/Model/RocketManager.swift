@@ -7,6 +7,7 @@
 
 import Foundation
 
+typealias Rocket = RocketModel
 typealias Rockets = [RocketModel]
 typealias UpcominLaunches = [UpcomingModel]
 typealias RocketsCallBack = (Rockets?, APIError?) -> Void
@@ -24,11 +25,20 @@ class RocketManager: RocketProtocol {
     
     private var latestRockets: Rockets?
     private var favoriteRockets = Favorites()
+    private var currentRocket: Rocket?
     
     //MARK: - All Rockets
     
     func getRockets() -> Rockets? {
         return latestRockets
+    }
+    
+    func getCurrentRocket() -> Rocket? {
+        return currentRocket
+    }
+    
+    func setCurrentRocket(_ rocket: Rocket) {
+        currentRocket = rocket
     }
     
     func getAllRockets(completionHandler: @escaping RocketsCallBack) {

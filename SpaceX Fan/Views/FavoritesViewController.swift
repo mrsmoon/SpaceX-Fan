@@ -63,16 +63,9 @@ extension FavoritesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        viewModel.selectedRocket = viewModel.currentFavorites[indexPath.row]
+        
         performSegue(withIdentifier: Constants.favoriteSegueIdentifier, sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.favoriteSegueIdentifier {
-            if let destinationVC = segue.destination as? RocketDetailViewController {
-                //TODO: Send upcoming object here
-                //destinationVC.rocket =
-            }
-        }
     }
 }
 
