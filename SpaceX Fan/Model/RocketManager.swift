@@ -9,9 +9,9 @@ import Foundation
 
 typealias Rocket = RocketModel
 typealias Rockets = [RocketModel]
-typealias UpcominLaunches = [UpcomingModel]
+typealias UpcomingLaunches = [UpcomingModel]
 typealias RocketsCallBack = (Rockets?, APIError?) -> Void
-typealias UpcomingCallBack = (UpcomingModel?, APIError?) -> Void
+typealias UpcomingCallBack = (UpcomingLaunches?, APIError?) -> Void
 typealias Favorites = Set<RocketModel>
 
 protocol RocketProtocol {
@@ -70,7 +70,31 @@ class RocketManager: RocketProtocol {
     }
     
     func getAllUpcomingLaunches(completionHandler: @escaping UpcomingCallBack) {
+        guard let resourceURL = URL(string: Constants.upcomingURL) else { fatalError() }
         
+        var urlRequest = URLRequest(url: resourceURL)
+        urlRequest.httpMethod = "GET"
+        
+        let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, let jsonData = data else {
+                print("Response error for getting upcomings")
+                completionHandler(nil, .responseError)
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let upcomings = try decoder.decode(UpcomingLaunches.self, from: jsonData)
+                print("Upcomings are fecthed: \(upcomings)")
+                
+                completionHandler(upcomings, nil)
+            } catch {
+                print("Error parsing rockets: \(error)")
+                completionHandler(nil, .parseError)
+            }
+        }
+        
+        dataTask.resume()
     }
     
     //MARK: - Favorites

@@ -7,11 +7,7 @@
 
 import Foundation
 
-struct RocketModel: Codable, Hashable {
-    static func == (lhs: RocketModel, rhs: RocketModel) -> Bool {
-        return lhs.id == rhs.id
-    }
-    
+struct RocketModel: Codable {
     private let id: String
     private let name: String
     private let height: Height
@@ -124,5 +120,11 @@ struct Payload: Codable, Hashable{
     
     func getLb() -> Double {
         return lb
+    }
+}
+
+extension RocketModel: Hashable {
+    static func == (lhs: RocketModel, rhs: RocketModel) -> Bool {
+        return lhs.id == rhs.id
     }
 }
