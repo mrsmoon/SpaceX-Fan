@@ -13,8 +13,6 @@ class UpcomingTableViewCell: UITableViewCell {
     @IBOutlet weak var exploreButtonColored: UIButton!
     @IBOutlet weak var titleTopLabel: UILabel!
     @IBOutlet weak var titleBottomLabel: UILabel!
-    @IBOutlet weak var descriptionTopLabel: UILabel!
-    @IBOutlet weak var descriptionBottomLabel: UILabel!
     @IBOutlet weak var upcomingImage: UIImageView!
     
     var exploreClicked : (()->Void)? = nil
@@ -24,8 +22,6 @@ class UpcomingTableViewCell: UITableViewCell {
         
         exploreButtonColored.layer.cornerRadius = 22
         exploreButtonWhite.layer.cornerRadius = 22
-        
-        
         exploreButtonColored.layer.borderWidth = 0.3
         exploreButtonColored.layer.borderColor = UIColor.exploreButtonBorderColor.cgColor
     }
@@ -46,35 +42,23 @@ class UpcomingTableViewCell: UITableViewCell {
         if isCellIndexEven {
             exploreButtonColored.isHidden = true
             titleBottomLabel.isHidden = true
-            descriptionBottomLabel.isHidden = true
             exploreButtonWhite.isHidden = false
             titleTopLabel.isHidden = false
-            descriptionTopLabel.isHidden = false
-            
             titleTopLabel.text = upcoming.getName().uppercased()
-            descriptionTopLabel.text = ""
-            
-            
         } else {
             exploreButtonWhite.isHidden = true
             titleTopLabel.isHidden = true
-            descriptionTopLabel.isHidden = true
             exploreButtonColored.isHidden = false
             titleBottomLabel.isHidden = false
-            descriptionBottomLabel.isHidden = false
-            
             titleBottomLabel.text = upcoming.getName().uppercased()
-            descriptionBottomLabel.text = ""
         }
     }
     
     override func prepareForReuse() {
         exploreButtonColored.isHidden = true
         titleBottomLabel.isHidden = true
-        descriptionBottomLabel.isHidden = true
         exploreButtonWhite.isHidden = true
         titleTopLabel.isHidden = true
-        descriptionTopLabel.isHidden = true
         //TODO: open it later
         //upcomingImage.image = nil
     }
