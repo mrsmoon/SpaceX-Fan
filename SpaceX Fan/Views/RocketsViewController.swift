@@ -53,7 +53,18 @@ extension RocketsViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: Constants.rocketSegueIdentifier, sender: self)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.rocketSegueIdentifier {
+            if let destinationVC = segue.destination as? RocketDetailViewController {
+                //TODO: Send upcoming object here
+                //destinationVC.rocket =
+            }
+        }
     }
 }
 

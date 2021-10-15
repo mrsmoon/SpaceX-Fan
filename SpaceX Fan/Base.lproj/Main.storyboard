@@ -199,8 +199,19 @@
                     <view key="view" contentMode="scaleToFill" id="PNK-hy-Avx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="f4S-3F-hgX">
+                                <rect key="frame" x="-8" y="-96" width="430" height="1034"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="mh6-0u-1Fx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="f4S-3F-hgX" secondAttribute="bottomMargin" id="L80-hv-vBi"/>
+                            <constraint firstItem="f4S-3F-hgX" firstAttribute="trailingMargin" secondItem="PNK-hy-Avx" secondAttribute="trailing" id="Rw2-LQ-EkS"/>
+                            <constraint firstItem="f4S-3F-hgX" firstAttribute="topMargin" secondItem="PNK-hy-Avx" secondAttribute="top" id="i4N-Yj-0Qg"/>
+                            <constraint firstItem="f4S-3F-hgX" firstAttribute="leadingMargin" secondItem="PNK-hy-Avx" secondAttribute="leading" id="luX-cO-9f5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sFe-OI-qCt"/>
                 </viewController>
