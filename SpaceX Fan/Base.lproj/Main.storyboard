@@ -50,9 +50,8 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="398" height="143"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FALCON 9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dap-2S-L3s">
-                                                            <rect key="frame" x="16" y="11" width="200" height="23"/>
+                                                            <rect key="frame" x="16" y="11" width="316" height="23"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="200" id="I6M-rZ-fQG"/>
                                                                 <constraint firstAttribute="height" constant="23" id="Q5V-F3-VXh"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="NasalizationRg-Regular" family="Nasalization" pointSize="16"/>
@@ -78,6 +77,7 @@
                                                     <constraints>
                                                         <constraint firstItem="sIu-pd-LKi" firstAttribute="leading" secondItem="0BJ-wa-96a" secondAttribute="leading" constant="16" id="3CT-7O-E6b"/>
                                                         <constraint firstItem="W5I-7j-ptj" firstAttribute="leading" secondItem="0BJ-wa-96a" secondAttribute="leading" id="4iu-UW-n50"/>
+                                                        <constraint firstItem="IOJ-by-vor" firstAttribute="leading" secondItem="Dap-2S-L3s" secondAttribute="trailing" constant="16" id="JWZ-ii-jZg"/>
                                                         <constraint firstAttribute="trailing" secondItem="IOJ-by-vor" secondAttribute="trailing" id="MFz-pt-que"/>
                                                         <constraint firstItem="sIu-pd-LKi" firstAttribute="top" secondItem="Dap-2S-L3s" secondAttribute="bottom" id="Rml-U3-2pz"/>
                                                         <constraint firstItem="Dap-2S-L3s" firstAttribute="top" secondItem="0BJ-wa-96a" secondAttribute="top" constant="11" id="Wma-Dt-VHd"/>
@@ -297,10 +297,9 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="398" height="143"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FALCON 9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dA1-hD-6JD">
-                                                            <rect key="frame" x="16" y="11" width="200" height="23"/>
+                                                            <rect key="frame" x="16" y="11" width="316" height="23"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="23" id="8kL-Ly-BG4"/>
-                                                                <constraint firstAttribute="width" constant="200" id="tSu-ih-KLx"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="NasalizationRg-Regular" family="Nasalization" pointSize="16"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -312,10 +311,10 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ui9-rT-7yJ">
                                                             <rect key="frame" x="348" y="0.0" width="50" height="50"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="50" id="UQs-q0-aFS"/>
                                                                 <constraint firstAttribute="height" constant="50" id="uCA-Eu-Qzh"/>
+                                                                <constraint firstAttribute="width" constant="50" id="wHI-xq-m7P"/>
                                                             </constraints>
-                                                            <state key="normal" title="Button" image="favoriteStarActive">
+                                                            <state key="normal" image="favoriteStarActive">
                                                                 <color key="titleColor" red="0.34509803921568627" green="0.98431372549019602" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                             <connections>
@@ -337,6 +336,7 @@
                                                         <constraint firstItem="KUM-jI-7lt" firstAttribute="top" secondItem="dA1-hD-6JD" secondAttribute="bottom" id="o8O-td-aKQ"/>
                                                         <constraint firstAttribute="height" constant="180" id="rWU-qZ-83f"/>
                                                         <constraint firstItem="dA1-hD-6JD" firstAttribute="top" secondItem="swA-Q9-DXh" secondAttribute="top" constant="11" id="yQe-qK-kKP"/>
+                                                        <constraint firstItem="ui9-rT-7yJ" firstAttribute="leading" secondItem="dA1-hD-6JD" secondAttribute="trailing" constant="16" id="zN8-8D-rvY"/>
                                                         <constraint firstItem="KUM-jI-7lt" firstAttribute="leading" secondItem="swA-Q9-DXh" secondAttribute="leading" constant="16" id="zXi-Ln-fHK"/>
                                                     </constraints>
                                                 </view>
