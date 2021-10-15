@@ -50,6 +50,10 @@ struct UpcomingModel: Codable {
         return imageLinks
     }
     
+    func getDate() -> RemainingTime {
+        return date.toDate().datePhraseRelativeToToday()
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id
         case name
