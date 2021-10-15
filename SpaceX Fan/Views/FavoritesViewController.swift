@@ -12,16 +12,21 @@ class FavoritesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
+        viewModel.subscribe()
         configureNavigationBar()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        viewModel.unsubscribe()
+    }
+    
+    let viewModel = FavoritesViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
-        
-        configureNavigationBar()
     }
     
     func configureNavigationBar() {
@@ -76,10 +81,18 @@ extension FavoritesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.rocketCellIdentifier) as! RocketTableViewCell
         
+        let rocket = viewModel.currentFavorites[indexPath.row]
+        cell.isFavorite = viewModel.isRocketInFavorites(rocket)
+        cell.rocket = rocket
+        
+        cell.starClicked = {
+            self.viewModel.updateFavoriteList(withStatusOf: rocket)
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel.currentFavorites.count
     }
 }

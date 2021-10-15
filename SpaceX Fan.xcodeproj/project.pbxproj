@@ -12,6 +12,7 @@
 		D6344E6C2719A60D00B24CA4 /* RocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344E6B2719A60D00B24CA4 /* RocketManager.swift */; };
 		D6344E712719A65000B24CA4 /* RocketsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344E702719A65000B24CA4 /* RocketsViewModel.swift */; };
 		D6344E792719A76000B24CA4 /* UpcomingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344E782719A76000B24CA4 /* UpcomingModel.swift */; };
+		D6344E7C2719D28900B24CA4 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344E7B2719D28900B24CA4 /* FavoritesViewModel.swift */; };
 		D65041792716E3F10054F8CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65041782716E3F10054F8CE /* AppDelegate.swift */; };
 		D650417B2716E3F10054F8CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D650417A2716E3F10054F8CE /* SceneDelegate.swift */; };
 		D65041802716E3F10054F8CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D650417E2716E3F10054F8CE /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		D6344E6B2719A60D00B24CA4 /* RocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketManager.swift; sourceTree = "<group>"; };
 		D6344E702719A65000B24CA4 /* RocketsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsViewModel.swift; sourceTree = "<group>"; };
 		D6344E782719A76000B24CA4 /* UpcomingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingModel.swift; sourceTree = "<group>"; };
+		D6344E7B2719D28900B24CA4 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		D65041752716E3F10054F8CE /* SpaceX Fan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SpaceX Fan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D65041782716E3F10054F8CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D650417A2716E3F10054F8CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				D6344E702719A65000B24CA4 /* RocketsViewModel.swift */,
+				D6344E7B2719D28900B24CA4 /* FavoritesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				D6344E712719A65000B24CA4 /* RocketsViewModel.swift in Sources */,
 				D6344E622719068500B24CA4 /* UIColor+Extension.swift in Sources */,
 				D67696EB2718CDDC00A3838C /* RocketTableViewCell.swift in Sources */,
+				D6344E7C2719D28900B24CA4 /* FavoritesViewModel.swift in Sources */,
 				D67696D42718CB8200A3838C /* RocketsViewController.swift in Sources */,
 				D67696E12718CC7F00A3838C /* UpcomingDetailViewController.swift in Sources */,
 				D6344E6C2719A60D00B24CA4 /* RocketManager.swift in Sources */,
