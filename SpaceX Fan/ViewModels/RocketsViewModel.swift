@@ -60,11 +60,7 @@ class RocketViewModel {
     }
     
     func isRocketInFavorites(_ rocket: RocketInfo) -> Bool  {
-        if favorites.contains(rocket) {
-            return true
-        }
-        
-        return false
+        return manager.isExistsInFavorites(rocketId: rocket.getId())
     }
     
     func updateFavoriteList(withStatusOf rocket: RocketInfo) {
@@ -73,7 +69,5 @@ class RocketViewModel {
         } else {
             manager.addFavoriteRocket(rocket)
         }
-        
-        print(favorites.count)
     }
 }

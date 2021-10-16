@@ -13,7 +13,7 @@ typealias Rockets = [RocketModel]
 typealias UpcomingLaunches = [UpcomingModel]
 typealias RocketsCallBack = (Rockets?, APIError?) -> Void
 typealias UpcomingCallBack = (UpcomingLaunches?, APIError?) -> Void
-typealias Favorites = Set<RocketModel>
+typealias Favorites = Results<Rocket>
 
 protocol RocketProtocol {
     func getAllRockets(completionHandler: @escaping RocketsCallBack)
@@ -25,9 +25,13 @@ class RocketManager: RocketProtocol {
     static let shared = RocketManager()
     
     private var latestRockets: Rockets?
-    private var favoriteRockets = Favorites()
     private var currentRocket: RocketInfo?
+    private var currentFavorite: Rocket?
     private var currentUpcomingLaunch: UpcomingModel?
+    
+    private var favoriteRockets: Favorites {
+        loadFavorites()
+    }
     
     //MARK: - All Rockets
     
@@ -41,6 +45,10 @@ class RocketManager: RocketProtocol {
     
     func setCurrentRocket(_ rocket: RocketInfo) {
         currentRocket = rocket
+    }
+    
+    func setCurrentFavorite(_ rocket: Rocket) {
+        currentFavorite = rocket
     }
     
     func getCurrentUpcomingLaunch() -> UpcomingModel? {
@@ -113,14 +121,17 @@ class RocketManager: RocketProtocol {
         return favoriteRockets
     }
     
-    func addFavoriteRocket(_ rocket: RocketModel) {
-        favoriteRockets.insert(rocket)
-        print(favoriteRockets)
-        print(favoriteRockets.count)
+    func addFavoriteRocket(_ rocket: RocketInfo) {
+        saveFavoriteRocket(rocket)
     }
     
-    func removeFavoriteRocket(_ rocket: RocketModel) {
-        favoriteRockets.remove(rocket)
+    func removeFavoriteRocket(_ rocket: RocketInfo) {
+        let result = favoriteRockets.filter("id CONTAINS %@", rocket.getId())
+        removeFavoriteRocket(result.elements.first!)
+    }
+    
+    func isExistsInFavorites(rocketId: String) -> Bool {
+        return favoriteRockets.contains { $0.id == rocketId }
     }
     
     //MARK: - Realm
@@ -153,17 +164,19 @@ class RocketManager: RocketProtocol {
             }
         }
     }
+    
+    func addFavoriteRocket(_ rocket: Rocket) {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(rocket)
+        }
+    }
 
     func removeFavoriteRocket(_ rocket: Rocket) {
         let realm = try! Realm()
         try! realm.write {
             realm.delete(rocket)
         }
-    }
-    
-    func isExistsInFavorites(rocket: RocketInfo) -> Bool {
-        let favorites = loadFavorites()
-        return favorites.contains { $0.id == rocket.getId()}
     }
     
     func loadFavorites() -> Results<Rocket> {

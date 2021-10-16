@@ -15,10 +15,6 @@ class FavoritesViewController: UIViewController {
         viewModel.subscribe()
         configureNavigationBar()
     }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        viewModel.unsubscribe()
-    }
     
     let viewModel = FavoritesViewModel()
     
@@ -63,7 +59,7 @@ extension FavoritesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        viewModel.selectedRocket = viewModel.currentFavorites[indexPath.row]
+        viewModel.selectedRocket = viewModel.currentFavorites?[indexPath.row]
         
         performSegue(withIdentifier: Constants.favoriteSegueIdentifier, sender: self)
     }
@@ -74,9 +70,10 @@ extension FavoritesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.rocketCellIdentifier) as! RocketTableViewCell
         
-        let rocket = viewModel.currentFavorites[indexPath.row]
+        let rocket = viewModel.currentFavorites![indexPath.row]
         cell.isFavorite = viewModel.isRocketInFavorites(rocket)
-        cell.rocket = rocket
+        
+        cell.rocketNameLabel.text = rocket.getName().uppercased()
         
         cell.starClicked = {
             self.viewModel.updateFavoriteList(withStatusOf: rocket)
@@ -86,6 +83,6 @@ extension FavoritesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.currentFavorites.count
+        return viewModel.currentFavorites?.count ?? 0
     }
 }

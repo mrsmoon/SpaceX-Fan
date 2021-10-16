@@ -46,9 +46,6 @@ class RocketTableViewCell: UITableViewCell {
         if let clicked = starClicked {
             clicked()
         }
-        
-        
-        //TODO: Update favorite rocket list
     }
     
 //    override func prepareForReuse() {
