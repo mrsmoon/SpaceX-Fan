@@ -14,14 +14,9 @@ protocol RocketViewModelDelegate {
 
 class RocketViewModel {
     
-    static let shared = RocketViewModel()
-    
     func subscribe() {
-        if rockets.isEmpty {
-            fetchRockets()
-        } else {
-            self.delegate?.rocketsFetched()
-        }
+        //TODO: Add check for cached rockets, if there is no cache call the method below
+        fetchRockets()
     }
     
     func unsubscribe() {
@@ -37,7 +32,7 @@ class RocketViewModel {
     
     var delegate: RocketViewModelDelegate?
     
-    var selectedRocket: RocketInfo? {
+    var selectedRocket: Rocket? {
         didSet {
             manager.setCurrentRocket(selectedRocket!)
         }
@@ -45,7 +40,7 @@ class RocketViewModel {
     
     func saveFavoriteRockets() {
         //TODO: Realm - save
-        //manager.saveFavorites()
+        manager.saveFavorites()
     }
     
     func fetchRockets() {
@@ -59,15 +54,21 @@ class RocketViewModel {
         }
     }
     
-    func isRocketInFavorites(_ rocket: RocketInfo) -> Bool  {
-        return manager.isExistsInFavorites(rocketId: rocket.getId())
+    func isRocketInFavorites(_ rocket: RocketModel) -> Bool  {
+        if favorites.contains(rocket) {
+            return true
+        }
+        
+        return false
     }
     
-    func updateFavoriteList(withStatusOf rocket: RocketInfo) {
+    func updateFavoriteList(withStatusOf rocket: RocketModel) {
         if isRocketInFavorites(rocket) {
             manager.removeFavoriteRocket(rocket)
         } else {
             manager.addFavoriteRocket(rocket)
         }
+        
+        print(favorites.count)
     }
 }

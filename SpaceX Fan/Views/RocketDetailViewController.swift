@@ -13,7 +13,7 @@ class RocketDetailViewController: UIViewController {
         configureNavigationBar()
     }
     
-    var rocket: RocketInfo?
+    var rocket: Rocket?
     
     override func viewDidLoad() {
         super.viewDidLoad()

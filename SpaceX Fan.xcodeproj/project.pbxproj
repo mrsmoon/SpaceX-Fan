@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,8 +15,6 @@
 		D6344E7C2719D28900B24CA4 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344E7B2719D28900B24CA4 /* FavoritesViewModel.swift */; };
 		D6344E7F271A216100B24CA4 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344E7E271A216100B24CA4 /* Date+Extension.swift */; };
 		D6344E82271A28E100B24CA4 /* UpcomingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344E81271A28E100B24CA4 /* UpcomingViewModel.swift */; };
-		D6344E9E271B31E500B24CA4 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344E9D271B31E500B24CA4 /* Rocket.swift */; };
-		D6344EA8271B62E700B24CA4 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344EA7271B62E700B24CA4 /* Double+Extension.swift */; };
 		D65041792716E3F10054F8CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65041782716E3F10054F8CE /* AppDelegate.swift */; };
 		D650417B2716E3F10054F8CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D650417A2716E3F10054F8CE /* SceneDelegate.swift */; };
 		D65041802716E3F10054F8CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D650417E2716E3F10054F8CE /* Main.storyboard */; };
@@ -36,13 +34,9 @@
 		D67696E72718CDC600A3838C /* UpcomingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67696E62718CDC600A3838C /* UpcomingTableViewCell.swift */; };
 		D67696EB2718CDDC00A3838C /* RocketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67696EA2718CDDC00A3838C /* RocketTableViewCell.swift */; };
 		D67696EE2718E09300A3838C /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67696ED2718E09300A3838C /* UIImage+Extension.swift */; };
-		D6E8CFD68EE3474DD6EEFFD9 /* Pods_SpaceX_Fan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 136C3064F795901AFDA50FAD /* Pods_SpaceX_Fan.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		136C3064F795901AFDA50FAD /* Pods_SpaceX_Fan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceX_Fan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		55DCD010E4767EC1C01D51EC /* Pods-SpaceX Fan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceX Fan.debug.xcconfig"; path = "Target Support Files/Pods-SpaceX Fan/Pods-SpaceX Fan.debug.xcconfig"; sourceTree = "<group>"; };
-		B8CEDBD14EC2E45E4B19D609 /* Pods-SpaceX Fan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceX Fan.release.xcconfig"; path = "Target Support Files/Pods-SpaceX Fan/Pods-SpaceX Fan.release.xcconfig"; sourceTree = "<group>"; };
 		D6344E612719068500B24CA4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		D6344E682719A5F300B24CA4 /* RocketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketModel.swift; sourceTree = "<group>"; };
 		D6344E6B2719A60D00B24CA4 /* RocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketManager.swift; sourceTree = "<group>"; };
@@ -51,8 +45,6 @@
 		D6344E7B2719D28900B24CA4 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		D6344E7E271A216100B24CA4 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		D6344E81271A28E100B24CA4 /* UpcomingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewModel.swift; sourceTree = "<group>"; };
-		D6344E9D271B31E500B24CA4 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
-		D6344EA7271B62E700B24CA4 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		D65041752716E3F10054F8CE /* SpaceX Fan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SpaceX Fan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D65041782716E3F10054F8CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D650417A2716E3F10054F8CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,37 +73,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6E8CFD68EE3474DD6EEFFD9 /* Pods_SpaceX_Fan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		974A05E2D54A9D140FA4E879 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				55DCD010E4767EC1C01D51EC /* Pods-SpaceX Fan.debug.xcconfig */,
-				B8CEDBD14EC2E45E4B19D609 /* Pods-SpaceX Fan.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		B6E3420648A9FC348520120B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				136C3064F795901AFDA50FAD /* Pods_SpaceX_Fan.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		D6344E642719A3B000B24CA4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				D67696ED2718E09300A3838C /* UIImage+Extension.swift */,
 				D6344E612719068500B24CA4 /* UIColor+Extension.swift */,
 				D6344E7E271A216100B24CA4 /* Date+Extension.swift */,
-				D6344EA7271B62E700B24CA4 /* Double+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -122,7 +95,6 @@
 				D6344E682719A5F300B24CA4 /* RocketModel.swift */,
 				D6344E6B2719A60D00B24CA4 /* RocketManager.swift */,
 				D6344E782719A76000B24CA4 /* UpcomingModel.swift */,
-				D6344E9D271B31E500B24CA4 /* Rocket.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -150,8 +122,6 @@
 			children = (
 				D65041772716E3F10054F8CE /* SpaceX Fan */,
 				D65041762716E3F10054F8CE /* Products */,
-				974A05E2D54A9D140FA4E879 /* Pods */,
-				B6E3420648A9FC348520120B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -239,11 +209,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D65041892716E3F20054F8CE /* Build configuration list for PBXNativeTarget "SpaceX Fan" */;
 			buildPhases = (
-				28C470A758E26362C488412E /* [CP] Check Pods Manifest.lock */,
 				D65041712716E3F10054F8CE /* Sources */,
 				D65041722716E3F10054F8CE /* Frameworks */,
 				D65041732716E3F10054F8CE /* Resources */,
-				B52A016F077E78C52EE1DDAF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -304,48 +272,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		28C470A758E26362C488412E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SpaceX Fan-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B52A016F077E78C52EE1DDAF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SpaceX Fan/Pods-SpaceX Fan-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SpaceX Fan/Pods-SpaceX Fan-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SpaceX Fan/Pods-SpaceX Fan-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		D65041712716E3F10054F8CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -353,9 +279,7 @@
 			files = (
 				D67696DD2718CBB600A3838C /* UpcomingViewController.swift in Sources */,
 				D6344E792719A76000B24CA4 /* UpcomingModel.swift in Sources */,
-				D6344EA8271B62E700B24CA4 /* Double+Extension.swift in Sources */,
 				D67696D72718CB9800A3838C /* RocketDetailViewController.swift in Sources */,
-				D6344E9E271B31E500B24CA4 /* Rocket.swift in Sources */,
 				D67696DA2718CBA700A3838C /* FavoritesViewController.swift in Sources */,
 				D6344E712719A65000B24CA4 /* RocketsViewModel.swift in Sources */,
 				D6344E622719068500B24CA4 /* UIColor+Extension.swift in Sources */,
@@ -515,7 +439,6 @@
 		};
 		D650418A2716E3F20054F8CE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55DCD010E4767EC1C01D51EC /* Pods-SpaceX Fan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -536,7 +459,6 @@
 		};
 		D650418B2716E3F20054F8CE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8CEDBD14EC2E45E4B19D609 /* Pods-SpaceX Fan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

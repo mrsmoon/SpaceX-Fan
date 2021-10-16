@@ -11,7 +11,7 @@ class RocketsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let viewModel = RocketViewModel.shared
+    let viewModel = RocketViewModel()
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.subscribe()
