@@ -17,34 +17,30 @@ class FavoritesViewModel {
         saveFavoriteRockets()
     }
     
-    var currentFavorites = Rockets()
+    var currentFavorites: Favorites?
     
     let manager = RocketManager.shared
     
     var selectedRocket: Rocket? {
         didSet {
-            manager.setCurrentRocket(selectedRocket!)
+            manager.setCurrentFavorite(selectedRocket!)
         }
     }
     
     func getFavorites() {
-        currentFavorites = Array(manager.getFavoriteRockets())
+        currentFavorites = manager.getFavoriteRockets()
     }
     
     func saveFavoriteRockets() {
         //TODO: Realm - save
-        manager.saveFavorites()
+        //manager.saveFavorites()
     }
     
-    func isRocketInFavorites(_ rocket: RocketModel) -> Bool  {
-        if currentFavorites.contains(rocket) {
-            return true
-        }
-        
-        return false
+    func isRocketInFavorites(_ rocket: Rocket) -> Bool  {
+        return manager.isExistsInFavorites(rocketId: rocket.getId())
     }
     
-    func updateFavoriteList(withStatusOf rocket: RocketModel) {
+    func updateFavoriteList(withStatusOf rocket: Rocket) {
         if isRocketInFavorites(rocket) {
             manager.removeFavoriteRocket(rocket)
         } else {
