@@ -67,7 +67,8 @@ class RocketManager: RocketProtocol {
             do {
                 let decoder = JSONDecoder()
                 let rockets = try decoder.decode(Rockets.self, from: jsonData)
-                print("Rockets are fetched: \(rockets)") 
+                self.latestRockets = rockets
+                print("Rockets are fetched: \(rockets)")
                 completionHandler(rockets, nil)
             } catch {
                 print("Error parsing rockets: \(error)")
@@ -124,12 +125,52 @@ class RocketManager: RocketProtocol {
     
     //MARK: - Realm
     
-    func loadFavorites() {
-        
+    func saveFavoriteRocket(_ rocket: RocketInfo) {
+        let realm = try! Realm()
+        let newRocket = Rocket()
+        newRocket.id = rocket.getId()
+        newRocket.name = rocket.getName()
+        newRocket.heightMeter = rocket.getHeight().getMeters()
+        newRocket.heightFeet = rocket.getHeight().getFeet()
+        newRocket.diameterMeter = rocket.getDiameter().getMeters()
+        newRocket.diameterFeet = rocket.getDiameter().getFeet()
+        newRocket.massLb = rocket.getMass().getLb()
+        newRocket.massKg = rocket.getMass().getKg()
+        newRocket.rocketDescription = rocket.getDescription()
+            
+        try! realm.write {
+            realm.add(newRocket)
+            rocket.getPayload().forEach { (payload) in
+                let newPayload = PayLoad()
+                newPayload.id = payload.getId()
+                newPayload.name = payload.getName()
+                newPayload.kg = payload.getKg()
+                newPayload.lb = payload.getLb()
+                newRocket.payload.append(newPayload)
+            }
+            rocket.getImages().forEach { (image) in
+                newRocket.images.append(image)
+            }
+        }
+    }
+
+    func removeFavoriteRocket(_ rocket: Rocket) {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.delete(rocket)
+        }
     }
     
-    func saveFavorites() {
+    func isExistsInFavorites(rocket: RocketInfo) -> Bool {
+        let favorites = loadFavorites()
+        return favorites.contains { $0.id == rocket.getId()}
+    }
+    
+    func loadFavorites() -> Results<Rocket> {
         
+        let realm = try! Realm()
+        
+        return realm.objects(Rocket.self)
     }
     
 }

@@ -33,7 +33,7 @@ class FavoritesViewModel {
     
     func saveFavoriteRockets() {
         //TODO: Realm - save
-        manager.saveFavorites()
+        //manager.saveFavorites()
     }
     
     func isRocketInFavorites(_ rocket: RocketInfo) -> Bool  {
