@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import RealmSwift
 
-typealias Rocket = RocketModel
+typealias RocketInfo = RocketModel
 typealias Rockets = [RocketModel]
 typealias UpcomingLaunches = [UpcomingModel]
 typealias RocketsCallBack = (Rockets?, APIError?) -> Void
@@ -25,7 +26,7 @@ class RocketManager: RocketProtocol {
     
     private var latestRockets: Rockets?
     private var favoriteRockets = Favorites()
-    private var currentRocket: Rocket?
+    private var currentRocket: RocketInfo?
     private var currentUpcomingLaunch: UpcomingModel?
     
     //MARK: - All Rockets
@@ -34,11 +35,11 @@ class RocketManager: RocketProtocol {
         return latestRockets
     }
     
-    func getCurrentRocket() -> Rocket? {
+    func getCurrentRocket() -> RocketInfo? {
         return currentRocket
     }
     
-    func setCurrentRocket(_ rocket: Rocket) {
+    func setCurrentRocket(_ rocket: RocketInfo) {
         currentRocket = rocket
     }
     
@@ -66,8 +67,7 @@ class RocketManager: RocketProtocol {
             do {
                 let decoder = JSONDecoder()
                 let rockets = try decoder.decode(Rockets.self, from: jsonData)
-                print("Rockets are fecthed: \(rockets)")
-                
+                print("Rockets are fetched: \(rockets)") 
                 completionHandler(rockets, nil)
             } catch {
                 print("Error parsing rockets: \(error)")

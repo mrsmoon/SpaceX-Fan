@@ -21,7 +21,7 @@ class FavoritesViewModel {
     
     let manager = RocketManager.shared
     
-    var selectedRocket: Rocket? {
+    var selectedRocket: RocketInfo? {
         didSet {
             manager.setCurrentRocket(selectedRocket!)
         }
@@ -36,7 +36,7 @@ class FavoritesViewModel {
         manager.saveFavorites()
     }
     
-    func isRocketInFavorites(_ rocket: RocketModel) -> Bool  {
+    func isRocketInFavorites(_ rocket: RocketInfo) -> Bool  {
         if currentFavorites.contains(rocket) {
             return true
         }
@@ -44,7 +44,7 @@ class FavoritesViewModel {
         return false
     }
     
-    func updateFavoriteList(withStatusOf rocket: RocketModel) {
+    func updateFavoriteList(withStatusOf rocket: RocketInfo) {
         if isRocketInFavorites(rocket) {
             manager.removeFavoriteRocket(rocket)
         } else {

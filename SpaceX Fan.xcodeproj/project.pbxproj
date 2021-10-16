@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		D6344E7C2719D28900B24CA4 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344E7B2719D28900B24CA4 /* FavoritesViewModel.swift */; };
 		D6344E7F271A216100B24CA4 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344E7E271A216100B24CA4 /* Date+Extension.swift */; };
 		D6344E82271A28E100B24CA4 /* UpcomingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344E81271A28E100B24CA4 /* UpcomingViewModel.swift */; };
+		D6344E9E271B31E500B24CA4 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344E9D271B31E500B24CA4 /* Rocket.swift */; };
+		D6344EA8271B62E700B24CA4 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344EA7271B62E700B24CA4 /* Double+Extension.swift */; };
 		D65041792716E3F10054F8CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65041782716E3F10054F8CE /* AppDelegate.swift */; };
 		D650417B2716E3F10054F8CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D650417A2716E3F10054F8CE /* SceneDelegate.swift */; };
 		D65041802716E3F10054F8CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D650417E2716E3F10054F8CE /* Main.storyboard */; };
@@ -49,6 +51,8 @@
 		D6344E7B2719D28900B24CA4 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		D6344E7E271A216100B24CA4 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		D6344E81271A28E100B24CA4 /* UpcomingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewModel.swift; sourceTree = "<group>"; };
+		D6344E9D271B31E500B24CA4 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
+		D6344EA7271B62E700B24CA4 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		D65041752716E3F10054F8CE /* SpaceX Fan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SpaceX Fan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D65041782716E3F10054F8CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D650417A2716E3F10054F8CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,7 +102,6 @@
 				8132CA9702DC120E21B31745 /* Pods-SpaceX Fan.debug.xcconfig */,
 				8E949AD065992CB9C369DED3 /* Pods-SpaceX Fan.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -108,6 +111,7 @@
 				D67696ED2718E09300A3838C /* UIImage+Extension.swift */,
 				D6344E612719068500B24CA4 /* UIColor+Extension.swift */,
 				D6344E7E271A216100B24CA4 /* Date+Extension.swift */,
+				D6344EA7271B62E700B24CA4 /* Double+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -118,6 +122,7 @@
 				D6344E682719A5F300B24CA4 /* RocketModel.swift */,
 				D6344E6B2719A60D00B24CA4 /* RocketManager.swift */,
 				D6344E782719A76000B24CA4 /* UpcomingModel.swift */,
+				D6344E9D271B31E500B24CA4 /* Rocket.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -348,7 +353,9 @@
 			files = (
 				D67696DD2718CBB600A3838C /* UpcomingViewController.swift in Sources */,
 				D6344E792719A76000B24CA4 /* UpcomingModel.swift in Sources */,
+				D6344EA8271B62E700B24CA4 /* Double+Extension.swift in Sources */,
 				D67696D72718CB9800A3838C /* RocketDetailViewController.swift in Sources */,
+				D6344E9E271B31E500B24CA4 /* Rocket.swift in Sources */,
 				D67696DA2718CBA700A3838C /* FavoritesViewController.swift in Sources */,
 				D6344E712719A65000B24CA4 /* RocketsViewModel.swift in Sources */,
 				D6344E622719068500B24CA4 /* UIColor+Extension.swift in Sources */,

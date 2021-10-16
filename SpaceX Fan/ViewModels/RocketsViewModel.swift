@@ -32,7 +32,7 @@ class RocketViewModel {
     
     var delegate: RocketViewModelDelegate?
     
-    var selectedRocket: Rocket? {
+    var selectedRocket: RocketInfo? {
         didSet {
             manager.setCurrentRocket(selectedRocket!)
         }
@@ -54,7 +54,7 @@ class RocketViewModel {
         }
     }
     
-    func isRocketInFavorites(_ rocket: RocketModel) -> Bool  {
+    func isRocketInFavorites(_ rocket: RocketInfo) -> Bool  {
         if favorites.contains(rocket) {
             return true
         }
@@ -62,7 +62,7 @@ class RocketViewModel {
         return false
     }
     
-    func updateFavoriteList(withStatusOf rocket: RocketModel) {
+    func updateFavoriteList(withStatusOf rocket: RocketInfo) {
         if isRocketInFavorites(rocket) {
             manager.removeFavoriteRocket(rocket)
         } else {
