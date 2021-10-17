@@ -43,11 +43,7 @@ class RocketsViewController: UIViewController {
     
     @IBAction func tabBarClicked(_ sender: UIButton) {
         if sender.tag == 1 {
-            let story = UIStoryboard(name: "Main", bundle: nil)
-            let vc = story.instantiateViewController(withIdentifier: Constants.favoritesStoryboardId)
-                    
-            navigationController?.pushViewController(vc, animated: false)
-            
+            getFaceIDAuthorization()
         } else if sender.tag == 2 {
             let story = UIStoryboard(name: "Main", bundle: nil)
             let vc = story.instantiateViewController(withIdentifier: Constants.upcomingStoryboardId)

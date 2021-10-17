@@ -45,10 +45,7 @@ class UpcomingViewController: UIViewController {
             navigationController?.pushViewController(vc, animated: false)
             
         } else if sender.tag == 1 {
-            let story = UIStoryboard(name: "Main", bundle: nil)
-            let vc = story.instantiateViewController(withIdentifier: Constants.favoritesStoryboardId)
-                    
-            navigationController?.pushViewController(vc, animated: false)
+            getFaceIDAuthorization()
         }
     }
 }
