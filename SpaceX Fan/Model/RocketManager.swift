@@ -28,10 +28,11 @@ class RocketManager: RocketProtocol {
     private var currentRocket: Rocket?
     private var currentFavorite: RocketData?
     private var currentUpcomingLaunch: UpcomingModel?
-    private var realmStore = RealmStore.shared
     private var favoriteRockets: Favorites {
         realmStore.loadFavorites()
     }
+    
+    var realmStore = RealmStore.shared
     
     //MARK: - All Rockets
     
