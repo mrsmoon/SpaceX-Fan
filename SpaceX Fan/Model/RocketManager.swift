@@ -48,6 +48,10 @@ class RocketManager: RocketProtocol {
         currentRocket = rocket
     }
     
+    func getCurrentFavorite() -> RocketData? {
+        return currentFavorite
+    }
+    
     func setCurrentFavorite(_ rocket: RocketData) {
         currentFavorite = rocket
     }

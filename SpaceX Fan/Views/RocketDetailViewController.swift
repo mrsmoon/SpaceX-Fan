@@ -9,17 +9,23 @@ import UIKit
 
 class RocketDetailViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    let viewModel = RocketDetailViewModel.shared
+    
     override func viewWillAppear(_ animated: Bool) {
         configureNavigationBar()
     }
     
-    var rocket: Rocket?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //TODO: Change title according to rocket name
-        title = "FALCON 9"
+        title = viewModel.currentRocket?.getName().uppercased()
+ 
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        tableView.contentInset = UIEdgeInsets.zero
     }
     
     func configureNavigationBar() {
@@ -37,5 +43,31 @@ class RocketDetailViewController: UIViewController {
     @objc func backTapped() {
         navigationController?.popViewController(animated: true)
     }
-
 }
+
+extension RocketDetailViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.rocketDetailCellIdentifier) as! RocketDetailTableViewCell
+
+        let rocket = viewModel.currentRocket
+        cell.isFavorite = viewModel.isRocketInFavorites(rocket!)
+        cell.rocket = rocket
+        
+        cell.starClicked = {
+            self.viewModel.updateFavoriteList(withStatusOf: rocket!)
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
+}
+

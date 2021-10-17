@@ -15,6 +15,7 @@ class RocketsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.subscribe()
+        tableView.reloadData()
         configureNavigationBar()
     }
     
