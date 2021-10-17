@@ -18,6 +18,7 @@
 		D6344E82271A28E100B24CA4 /* UpcomingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344E81271A28E100B24CA4 /* UpcomingViewModel.swift */; };
 		D6344EDC271C26D700B24CA4 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344EDB271C26D700B24CA4 /* Rocket.swift */; };
 		D6344EDF271C272500B24CA4 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344EDE271C272500B24CA4 /* Double+Extension.swift */; };
+		D6344EE3271C280000B24CA4 /* RealmStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344EE2271C280000B24CA4 /* RealmStore.swift */; };
 		D65041792716E3F10054F8CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65041782716E3F10054F8CE /* AppDelegate.swift */; };
 		D650417B2716E3F10054F8CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D650417A2716E3F10054F8CE /* SceneDelegate.swift */; };
 		D65041802716E3F10054F8CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D650417E2716E3F10054F8CE /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		D6344E81271A28E100B24CA4 /* UpcomingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewModel.swift; sourceTree = "<group>"; };
 		D6344EDB271C26D700B24CA4 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
 		D6344EDE271C272500B24CA4 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		D6344EE2271C280000B24CA4 /* RealmStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStore.swift; sourceTree = "<group>"; };
 		D65041752716E3F10054F8CE /* SpaceX Fan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SpaceX Fan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D65041782716E3F10054F8CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D650417A2716E3F10054F8CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				D6344E6B2719A60D00B24CA4 /* RocketManager.swift */,
 				D6344E782719A76000B24CA4 /* UpcomingModel.swift */,
 				D6344EDB271C26D700B24CA4 /* Rocket.swift */,
+				D6344EE2271C280000B24CA4 /* RealmStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				D67696DD2718CBB600A3838C /* UpcomingViewController.swift in Sources */,
 				D6344E792719A76000B24CA4 /* UpcomingModel.swift in Sources */,
 				D67696D72718CB9800A3838C /* RocketDetailViewController.swift in Sources */,
+				D6344EE3271C280000B24CA4 /* RealmStore.swift in Sources */,
 				D6344EDC271C26D700B24CA4 /* Rocket.swift in Sources */,
 				D67696DA2718CBA700A3838C /* FavoritesViewController.swift in Sources */,
 				D6344E712719A65000B24CA4 /* RocketsViewModel.swift in Sources */,
