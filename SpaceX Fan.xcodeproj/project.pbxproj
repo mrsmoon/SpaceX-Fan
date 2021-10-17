@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07304870A35728C8512DB0B4 /* Pods_SpaceX_Fan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 720A22A8FF59EB6605BFE59E /* Pods_SpaceX_Fan.framework */; };
 		D6344E622719068500B24CA4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344E612719068500B24CA4 /* UIColor+Extension.swift */; };
 		D6344E692719A5F300B24CA4 /* RocketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344E682719A5F300B24CA4 /* RocketModel.swift */; };
 		D6344E6C2719A60D00B24CA4 /* RocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344E6B2719A60D00B24CA4 /* RocketManager.swift */; };
@@ -37,6 +38,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A201FB0BEC73F5658C9B7C2 /* Pods-SpaceX Fan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceX Fan.debug.xcconfig"; path = "Target Support Files/Pods-SpaceX Fan/Pods-SpaceX Fan.debug.xcconfig"; sourceTree = "<group>"; };
+		720A22A8FF59EB6605BFE59E /* Pods_SpaceX_Fan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceX_Fan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8B7D4CE9FBDE08D1731AFF8 /* Pods-SpaceX Fan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceX Fan.release.xcconfig"; path = "Target Support Files/Pods-SpaceX Fan/Pods-SpaceX Fan.release.xcconfig"; sourceTree = "<group>"; };
 		D6344E612719068500B24CA4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		D6344E682719A5F300B24CA4 /* RocketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketModel.swift; sourceTree = "<group>"; };
 		D6344E6B2719A60D00B24CA4 /* RocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketManager.swift; sourceTree = "<group>"; };
@@ -73,12 +77,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07304870A35728C8512DB0B4 /* Pods_SpaceX_Fan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DEA99EAF1C537CC33DBB12E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6A201FB0BEC73F5658C9B7C2 /* Pods-SpaceX Fan.debug.xcconfig */,
+				A8B7D4CE9FBDE08D1731AFF8 /* Pods-SpaceX Fan.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		937835DE17E40660CE33A066 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				720A22A8FF59EB6605BFE59E /* Pods_SpaceX_Fan.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D6344E642719A3B000B24CA4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +145,8 @@
 			children = (
 				D65041772716E3F10054F8CE /* SpaceX Fan */,
 				D65041762716E3F10054F8CE /* Products */,
+				1DEA99EAF1C537CC33DBB12E /* Pods */,
+				937835DE17E40660CE33A066 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -209,9 +234,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D65041892716E3F20054F8CE /* Build configuration list for PBXNativeTarget "SpaceX Fan" */;
 			buildPhases = (
+				F3BF30D49FBBA7D992E38915 /* [CP] Check Pods Manifest.lock */,
 				D65041712716E3F10054F8CE /* Sources */,
 				D65041722716E3F10054F8CE /* Frameworks */,
 				D65041732716E3F10054F8CE /* Resources */,
+				B7D328962BEEABBF25D1F641 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -271,6 +298,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B7D328962BEEABBF25D1F641 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SpaceX Fan/Pods-SpaceX Fan-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SpaceX Fan/Pods-SpaceX Fan-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SpaceX Fan/Pods-SpaceX Fan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3BF30D49FBBA7D992E38915 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SpaceX Fan-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D65041712716E3F10054F8CE /* Sources */ = {
@@ -439,6 +508,7 @@
 		};
 		D650418A2716E3F20054F8CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A201FB0BEC73F5658C9B7C2 /* Pods-SpaceX Fan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -459,6 +529,7 @@
 		};
 		D650418B2716E3F20054F8CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8B7D4CE9FBDE08D1731AFF8 /* Pods-SpaceX Fan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
