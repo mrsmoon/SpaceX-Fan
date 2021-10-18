@@ -62,6 +62,13 @@ extension UpcomingViewController: UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        viewModel.selectedUpcoming = viewModel.upcomings[indexPath.row]
+        
+        performSegue(withIdentifier: Constants.upcomingSegueIdentifier, sender: self)
+    }
 }
 
 extension UpcomingViewController: UITableViewDataSource {

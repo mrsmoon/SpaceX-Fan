@@ -15,6 +15,7 @@ class Constants {
     static let rocketCellIdentifier = "RocketCell"
     static let rocketDetailCellIdentifier = "RocketDetailCell"
     static let upcomingCellIdentifier = "UpcomingCell"
+    static let upcomingDetailCellIdentifier = "UpcomingDetailCell"
     static let imageCellIdentifier = "ImageCell"
     
     static let favoritesStoryboardId = "FavoritesVC"

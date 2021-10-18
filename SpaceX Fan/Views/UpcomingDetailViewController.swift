@@ -9,7 +9,12 @@ import UIKit
 
 class UpcomingDetailViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    let viewModel = UpcomingDetailViewModel.shared
+    
     override func viewWillAppear(_ animated: Bool) {
+        viewModel.subscribe()
         configureNavigationBar()
     }
 
@@ -18,7 +23,8 @@ class UpcomingDetailViewController: UIViewController {
         
         title = Constants.upcomingTitle
 
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     func configureNavigationBar() {
@@ -35,4 +41,26 @@ class UpcomingDetailViewController: UIViewController {
     @objc func backTapped() {
         navigationController?.popViewController(animated: true)
     }
+}
+
+extension UpcomingDetailViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.upcomingDetailCellIdentifier) as! UpcomingDetailTableViewCell
+
+        if let upcoming = viewModel.currentUpcoming {
+            cell.upcoming = upcoming
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
 }

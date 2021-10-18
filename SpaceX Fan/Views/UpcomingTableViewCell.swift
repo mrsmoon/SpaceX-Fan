@@ -52,6 +52,9 @@ class UpcomingTableViewCell: UITableViewCell {
             titleBottomLabel.isHidden = false
             titleBottomLabel.text = upcoming.getName().uppercased()
         }
+        
+        upcomingImage.image = UIImage(named: "image2")?.blend(with: UIImage.background!)
+        upcomingImage.contentMode = .scaleToFill
     }
     
     override func prepareForReuse() {
