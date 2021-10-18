@@ -88,6 +88,7 @@ extension FavoritesViewController: UITableViewDataSource {
         
         cell.starClicked = {
             self.viewModel.updateFavoriteList(withStatusOf: rocket)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
         
         return cell
