@@ -27,6 +27,7 @@
 		D6344F0E271CDCFA00B24CA4 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344F0D271CDCFA00B24CA4 /* UIView+Extension.swift */; };
 		D6344F11271D90B700B24CA4 /* UpcomingDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344F10271D90B700B24CA4 /* UpcomingDetailTableViewCell.swift */; };
 		D6344F14271D944300B24CA4 /* UpcomingDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6344F13271D944300B24CA4 /* UpcomingDetailViewModel.swift */; };
+		D6344F35271E047D00B24CA4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6344F34271E047D00B24CA4 /* GoogleService-Info.plist */; };
 		D65041792716E3F10054F8CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65041782716E3F10054F8CE /* AppDelegate.swift */; };
 		D650417B2716E3F10054F8CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D650417A2716E3F10054F8CE /* SceneDelegate.swift */; };
 		D65041822716E3F20054F8CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D65041812716E3F20054F8CE /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 		D6344F0D271CDCFA00B24CA4 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		D6344F10271D90B700B24CA4 /* UpcomingDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingDetailTableViewCell.swift; sourceTree = "<group>"; };
 		D6344F13271D944300B24CA4 /* UpcomingDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingDetailViewModel.swift; sourceTree = "<group>"; };
+		D6344F34271E047D00B24CA4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D65041752716E3F10054F8CE /* SpaceX Fan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SpaceX Fan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D65041782716E3F10054F8CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D650417A2716E3F10054F8CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				D65041812716E3F20054F8CE /* Assets.xcassets */,
 				D65041832716E3F20054F8CE /* LaunchScreen.storyboard */,
 				D65041862716E3F20054F8CE /* Info.plist */,
+				D6344F34271E047D00B24CA4 /* GoogleService-Info.plist */,
 				D6344E6E2719A61800B24CA4 /* Model */,
 				D67696D12718CB6B00A3838C /* Views */,
 				D6344E742719A65800B24CA4 /* ViewModels */,
@@ -276,6 +279,7 @@
 				D65041722716E3F10054F8CE /* Frameworks */,
 				D65041732716E3F10054F8CE /* Resources */,
 				B7D328962BEEABBF25D1F641 /* [CP] Embed Pods Frameworks */,
+				D6344F47271E063F00B24CA4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -325,6 +329,7 @@
 			files = (
 				D6344F02271CD0FA00B24CA4 /* Main.storyboard in Resources */,
 				D65041AF2716EA0F0054F8CE /* Roboto-Medium.ttf in Resources */,
+				D6344F35271E047D00B24CA4 /* GoogleService-Info.plist in Resources */,
 				D65041852716E3F20054F8CE /* LaunchScreen.storyboard in Resources */,
 				D65041822716E3F20054F8CE /* Assets.xcassets in Resources */,
 				D650419D2716E7980054F8CE /* Muli-SemiBold.ttf in Resources */,
@@ -353,6 +358,25 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SpaceX Fan/Pods-SpaceX Fan-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D6344F47271E063F00B24CA4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		F3BF30D49FBBA7D992E38915 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
