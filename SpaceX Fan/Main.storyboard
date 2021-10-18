@@ -838,9 +838,9 @@
                             <constraint firstItem="dCI-lh-iDj" firstAttribute="leading" secondItem="F09-U6-Q2Y" secondAttribute="leading" id="SC0-Mn-UyJ"/>
                             <constraint firstAttribute="bottom" secondItem="Jd0-1l-awq" secondAttribute="bottomMargin" id="SrE-ny-gO7"/>
                             <constraint firstItem="kfF-uE-yqn" firstAttribute="top" secondItem="3SS-Hq-Y0N" secondAttribute="top" id="TO6-D6-kgJ"/>
-                            <constraint firstItem="kfF-uE-yqn" firstAttribute="leading" secondItem="F09-U6-Q2Y" secondAttribute="leading" id="ULv-sB-2fg"/>
+                            <constraint firstItem="kfF-uE-yqn" firstAttribute="leading" secondItem="3SS-Hq-Y0N" secondAttribute="leading" id="ULv-sB-2fg"/>
                             <constraint firstAttribute="bottom" secondItem="kfF-uE-yqn" secondAttribute="bottom" id="Vnr-Mo-UdR"/>
-                            <constraint firstItem="F09-U6-Q2Y" firstAttribute="trailing" secondItem="kfF-uE-yqn" secondAttribute="trailing" id="gf2-dM-Kzp"/>
+                            <constraint firstAttribute="trailing" secondItem="kfF-uE-yqn" secondAttribute="trailing" id="gf2-dM-Kzp"/>
                             <constraint firstItem="Jd0-1l-awq" firstAttribute="topMargin" secondItem="3SS-Hq-Y0N" secondAttribute="top" id="jSJ-DN-tYE"/>
                             <constraint firstItem="dCI-lh-iDj" firstAttribute="top" secondItem="F09-U6-Q2Y" secondAttribute="top" constant="13" id="vn6-1d-vfs"/>
                         </constraints>
