@@ -933,9 +933,17 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image2" translatesAutoresizingMaskIntoConstraints="NO" id="2uv-KN-8a2">
+                                                            <rect key="frame" x="0.0" y="528" width="414" height="271"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="271" id="ge8-As-NuL"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstItem="2uv-KN-8a2" firstAttribute="leading" secondItem="IcY-DF-0DL" secondAttribute="leading" id="5wi-k1-HKi"/>
+                                                        <constraint firstItem="2uv-KN-8a2" firstAttribute="top" secondItem="MI0-7L-rj0" secondAttribute="bottom" constant="20" id="BFi-7P-Qhl"/>
                                                         <constraint firstItem="DT7-pe-s6Z" firstAttribute="leading" secondItem="IcY-DF-0DL" secondAttribute="leading" id="HxI-Bh-Rnm"/>
                                                         <constraint firstItem="DT7-pe-s6Z" firstAttribute="bottom" secondItem="N8C-Kh-vFI" secondAttribute="bottom" constant="10" id="Iq6-uz-XUq"/>
                                                         <constraint firstItem="uMM-L0-IH6" firstAttribute="leading" secondItem="IcY-DF-0DL" secondAttribute="leading" constant="10" id="Ks4-d0-70F"/>
@@ -946,6 +954,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="DT7-pe-s6Z" secondAttribute="trailing" id="tUl-0e-0yD"/>
                                                         <constraint firstItem="N8C-Kh-vFI" firstAttribute="leading" secondItem="IcY-DF-0DL" secondAttribute="leading" constant="19" id="uZS-hK-Xdv"/>
                                                         <constraint firstAttribute="trailing" secondItem="MI0-7L-rj0" secondAttribute="trailing" constant="20" id="xJz-qe-0xv"/>
+                                                        <constraint firstAttribute="trailing" secondItem="2uv-KN-8a2" secondAttribute="trailing" id="y3j-XN-z7f"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -963,6 +972,7 @@
                                             <outlet property="timeLabel" destination="w2k-Ka-UnO" id="MoX-mc-dWa"/>
                                             <outlet property="titleLabel" destination="uMM-L0-IH6" id="XKj-EU-Wj2"/>
                                             <outlet property="upcomingImage" destination="DT7-pe-s6Z" id="RL8-ia-scC"/>
+                                            <outlet property="upcomingImage2" destination="2uv-KN-8a2" id="cI2-aZ-1uc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

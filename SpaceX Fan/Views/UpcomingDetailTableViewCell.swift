@@ -13,6 +13,7 @@ class UpcomingDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var upcomingImage: UIImageView!
     @IBOutlet weak var detailsLabel: UILabel!
+    @IBOutlet weak var upcomingImage2: UIImageView!
     
     var upcoming: UpcomingModel? {
         didSet {
@@ -25,6 +26,9 @@ class UpcomingDetailTableViewCell: UITableViewCell {
             
             upcomingImage.image = UIImage(named: "image2")?.blend(with: UIImage.background!)
             upcomingImage.contentMode = .scaleToFill
+            
+            upcomingImage2.image = UIImage(named: "image1")?.blend(with: UIImage.background!)
+            upcomingImage2.contentMode = .scaleToFill
         }
     }
 
