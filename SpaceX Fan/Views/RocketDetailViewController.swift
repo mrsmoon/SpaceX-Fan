@@ -10,6 +10,7 @@ import UIKit
 class RocketDetailViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var backgroundView: UIView!
     
     let viewModel = RocketDetailViewModel.shared
     
@@ -26,6 +27,12 @@ class RocketDetailViewController: UIViewController {
         tableView.delegate = self
         
         tableView.contentInset = UIEdgeInsets.zero
+
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        backgroundView.addSubview(blurEffectView)
     }
     
     func configureNavigationBar() {
