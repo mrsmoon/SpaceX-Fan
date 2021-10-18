@@ -33,13 +33,14 @@ class UpcomingViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.topItem?.title = Constants.upcomingTitle
-        let attributes = [NSAttributedString.Key.font: UIFont(name: "Muli-SemiBold", size: 17)!]
-        UINavigationBar.appearance().titleTextAttributes = attributes
+        let attributes = [NSAttributedString.Key.font: UIFont(name: Constants.muliSemibold, size: 17)!,
+                          NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = attributes
     }
     
     @IBAction func tabBarClicked(_ sender: UIButton) {
         if sender.tag == 0 {
-            let story = UIStoryboard(name: "Main", bundle: nil)
+            let story = UIStoryboard(name: Constants.mainStoryboard, bundle: nil)
             let vc = story.instantiateViewController(withIdentifier: Constants.rocketsStoryboardId)
                     
             navigationController?.pushViewController(vc, animated: false)

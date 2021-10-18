@@ -24,7 +24,7 @@ extension UIViewController {
                         return
                     }
                     
-                    let story = UIStoryboard(name: "Main", bundle: nil)
+                    let story = UIStoryboard(name: Constants.mainStoryboard, bundle: nil)
                     let vc = story.instantiateViewController(withIdentifier: Constants.favoritesStoryboardId)
                             
                     self?.navigationController?.pushViewController(vc, animated: false)

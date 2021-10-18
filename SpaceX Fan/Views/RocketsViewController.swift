@@ -40,15 +40,16 @@ class RocketsViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.topItem?.title = Constants.rocketsTitle
-        let attributes = [NSAttributedString.Key.font: UIFont(name: "Muli-SemiBold", size: 17)!]
-        UINavigationBar.appearance().titleTextAttributes = attributes
+        let attributes = [NSAttributedString.Key.font: UIFont(name: Constants.muliSemibold, size: 17)!,
+                          NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = attributes
     }
     
     @IBAction func tabBarClicked(_ sender: UIButton) {
         if sender.tag == 1 {
             getFaceIDAuthorization()
         } else if sender.tag == 2 {
-            let story = UIStoryboard(name: "Main", bundle: nil)
+            let story = UIStoryboard(name: Constants.mainStoryboard, bundle: nil)
             let vc = story.instantiateViewController(withIdentifier: Constants.upcomingStoryboardId)
                     
             navigationController?.pushViewController(vc, animated: false)
@@ -65,7 +66,9 @@ extension RocketsViewController: RocketViewModelDelegate {
     
     func rocketFetchingDidFail() {
         DispatchQueue.main.async { [weak self] in
-            let alert = UIAlertController(title: "Sorry", message: "We are having problem to display SpaceX rockets now. Please try again later.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Sorry",
+                                          message: Constants.errorMessage,
+                                          preferredStyle: .alert)
             
             let action = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(action)

@@ -22,7 +22,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--SpaceX Rockets-->
+        <!--Rockets View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="RocketsVC" id="BYZ-38-t0r" customClass="RocketsViewController" customModule="SpaceX_Fan" customModuleProvider="target" sceneMemberID="viewController">
@@ -183,7 +183,7 @@
                             <constraint firstAttribute="bottom" secondItem="lPL-GY-bCy" secondAttribute="bottom" id="nza-Kb-o3Z"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="SpaceX Rockets" id="Eny-mN-bkd"/>
+                    <navigationItem key="navigationItem" id="Eny-mN-bkd"/>
                     <connections>
                         <outlet property="tableView" destination="lPL-GY-bCy" id="GLb-kK-3cf"/>
                         <segue destination="WHz-JW-FjV" kind="show" identifier="RocketSegue" id="Wyq-E1-DmY"/>

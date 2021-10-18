@@ -30,7 +30,12 @@ class Constants {
     static let nasalizationFont = "NasalizationRg-Regular"
     static let muliBold = "Muli-Bold"
     static let muliRegular = "Muli"
+    static let muliSemibold = "Muli-SemiBold"
     
     static let rocketsURL = "https://api.spacexdata.com/v4/rockets"
     static let upcomingURL = "https://api.spacexdata.com/v5/launches/upcoming"
+    
+    static let errorMessage = "We are having problem to display SpaceX rockets now. Please try again later."
+    
+    static let mainStoryboard = "Main"
 }

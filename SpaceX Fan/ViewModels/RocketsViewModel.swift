@@ -42,12 +42,11 @@ class RocketViewModel {
     
     func getRockets() {
         rockets = manager.getRockets()
-        print("ROCKETS: \(rockets)")
     }
     
     func fetchRockets() {
         manager.getAllRockets { (rockets, error) in
-            if let rockets = rockets {
+            if rockets != nil {
                 self.delegate?.rocketsFetched()
             } else {
                 self.delegate?.rocketFetchingDidFail()

@@ -44,7 +44,7 @@ class RocketDetailViewController: UIViewController {
         self.navigationController?.navigationBar.topItem?.title = Constants.rocketsTitle
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.font: UIFont(name: Constants.nasalizationFont, size: 16)!,
-             NSAttributedString.Key.foregroundColor: UIColor.exploreButtonBorderColor]
+             NSAttributedString.Key.foregroundColor: UIColor.cyan]
     }
     
     @objc func backTapped() {

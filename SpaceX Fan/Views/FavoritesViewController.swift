@@ -15,6 +15,7 @@ class FavoritesViewController: UIViewController {
         viewModel.subscribe()
         tableView.reloadData()
         configureNavigationBar()
+        title = Constants.favoritesTitle
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -25,6 +26,8 @@ class FavoritesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = Constants.favoritesTitle
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -39,19 +42,20 @@ class FavoritesViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.topItem?.title = Constants.favoritesTitle
-        let attributes = [NSAttributedString.Key.font: UIFont(name: "Muli-SemiBold", size: 17)!]
-        UINavigationBar.appearance().titleTextAttributes = attributes
+        let attributes = [NSAttributedString.Key.font: UIFont(name: Constants.muliSemibold, size: 17)!,
+                          NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = attributes
     }
     
     @IBAction func tabBarClicked(_ sender: UIButton) {
         if sender.tag == 0 {
-            let story = UIStoryboard(name: "Main", bundle: nil)
+            let story = UIStoryboard(name: Constants.mainStoryboard, bundle: nil)
             let vc = story.instantiateViewController(withIdentifier: Constants.rocketsStoryboardId)
                     
             navigationController?.pushViewController(vc, animated: false)
             
         } else if sender.tag == 2 {
-            let story = UIStoryboard(name: "Main", bundle: nil)
+            let story = UIStoryboard(name: Constants.mainStoryboard, bundle: nil)
             let vc = story.instantiateViewController(withIdentifier: Constants.upcomingStoryboardId)
                     
             navigationController?.pushViewController(vc, animated: false)

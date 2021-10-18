@@ -29,8 +29,6 @@ class RocketManager: RocketProtocol {
     
     var realmStore = RealmStore.shared
     
-    //MARK: - All Rockets
-    
     func getRockets() -> SpaceXRockets? {
         realmStore.loadRockets()
     }
@@ -51,6 +49,8 @@ class RocketManager: RocketProtocol {
         currentUpcomingLaunch = upcoming
     }
     
+    //MARK: - API Calls
+    
     func getAllRockets(completionHandler: @escaping RocketsCallBack) {
         guard let resourceURL = URL(string: Constants.rocketsURL) else { fatalError() }
         
@@ -67,7 +67,7 @@ class RocketManager: RocketProtocol {
             do {
                 let decoder = JSONDecoder()
                 let rockets = try decoder.decode(Rockets.self, from: jsonData)
-                print("Rockets are fecthed: \(rockets)")
+                print("Rockets are fecthed")
                 self.realmStore.saveRockets(rockets)
                 completionHandler(rockets, nil)
             } catch {
@@ -95,11 +95,11 @@ class RocketManager: RocketProtocol {
             do {
                 let decoder = JSONDecoder()
                 let upcomings = try decoder.decode(UpcomingLaunches.self, from: jsonData)
-                print("Upcomings are fecthed: \(upcomings)")
+                print("Upcomings are fetched")
                 
                 completionHandler(upcomings, nil)
             } catch {
-                print("Error parsing rockets: \(error)")
+                print("Error upcoming parsing: \(error)")
                 completionHandler(nil, .parseError)
             }
         }
@@ -117,14 +117,6 @@ class RocketManager: RocketProtocol {
     func updateFavoriteStatus(_ rocket: RocketData) {
         realmStore.updateRocketStatus(rocket)
     }
-//    func addFavoriteRocket(_ rocket: Rocket) {
-//        realmStore.saveFavoriteRocket(rocket)
-//    }
-//
-//    func removeFavoriteRocket(_ rocket: Rocket) {
-//        let result = favoriteRockets.filter("id CONTAINS %@", rocket.getId())
-//        realmStore.removeFavoriteRocket(result.elements.first!)
-//    }
     
     func isExistsInFavorites(rocketId: String) -> Bool {
         let favorites = getFavoriteRockets()
