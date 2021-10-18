@@ -7,5 +7,6 @@ target 'SpaceX Fan' do
 
   # Pods for SpaceX Fan
   pod 'RealmSwift', '~>10'
+  pod 'SDWebImage', '~> 5.0'
 
 end
