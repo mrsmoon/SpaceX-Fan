@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RocketDetailViewController: UIViewController {
     
@@ -33,6 +34,8 @@ class RocketDetailViewController: UIViewController {
         blurEffectView.frame = backgroundView.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         backgroundView.addSubview(blurEffectView)
+        
+        Analytics.logEvent(Constants.logEvent2, parameters: ["rocket_name": title!])
     }
     
     func configureNavigationBar() {

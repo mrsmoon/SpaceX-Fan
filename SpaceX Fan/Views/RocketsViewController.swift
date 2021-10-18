@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RocketsViewController: UIViewController {
     
@@ -47,6 +48,8 @@ class RocketsViewController: UIViewController {
     
     @IBAction func tabBarClicked(_ sender: UIButton) {
         if sender.tag == 1 {
+            Analytics.logEvent(Constants.logEvent1, parameters: nil)
+            
             getFaceIDAuthorization()
         } else if sender.tag == 2 {
             let story = UIStoryboard(name: Constants.mainStoryboard, bundle: nil)

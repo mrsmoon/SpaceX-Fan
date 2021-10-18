@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class UpcomingDetailViewController: UIViewController {
     
@@ -25,6 +26,9 @@ class UpcomingDetailViewController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+        Analytics.logEvent(Constants.logEvent4,
+                           parameters: ["upcoming_launch": viewModel.currentUpcoming?.getName() ?? ""])
     }
     
     func configureNavigationBar() {

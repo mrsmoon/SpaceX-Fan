@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class UpcomingViewController: UIViewController {
     
@@ -46,6 +47,7 @@ class UpcomingViewController: UIViewController {
             navigationController?.pushViewController(vc, animated: false)
             
         } else if sender.tag == 1 {
+            Analytics.logEvent(Constants.logEvent1, parameters: nil)
             getFaceIDAuthorization()
         }
     }
@@ -73,6 +75,8 @@ extension UpcomingViewController: UITableViewDataSource {
         let upcomingLaunch = viewModel.upcomings[indexPath.row]
         
         cell.exploreClicked = {
+            Analytics.logEvent(Constants.logEvent3, parameters: nil)
+            
             self.viewModel.selectedUpcoming = upcomingLaunch
             self.performSegue(withIdentifier: Constants.upcomingSegueIdentifier, sender: self)
         }
