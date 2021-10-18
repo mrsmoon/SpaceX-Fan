@@ -81,6 +81,7 @@ class RocketDetailTableViewCell: UITableViewCell {
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        createLayout()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -100,6 +101,14 @@ class RocketDetailTableViewCell: UITableViewCell {
             clicked()
         }
     }
+    
+    func createLayout() {
+        let collectionViewFlowLayout = UICollectionViewFlowLayout()
+        collectionViewFlowLayout.scrollDirection = .vertical
+        collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 9, left: 12, bottom: 9, right: 12)
+        collectionViewFlowLayout.minimumLineSpacing = 9
+        collectionView.setCollectionViewLayout(collectionViewFlowLayout, animated: true)
+    }
 
 }
 
@@ -112,5 +121,18 @@ extension RocketDetailTableViewCell: UICollectionViewDataSource, UICollectionVie
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.imageCellIdentifier, for: indexPath) as! ImageCollectionViewCell
         
         return cell
+    }
+}
+
+extension RocketDetailTableViewCell: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if let collection = self.collectionView {
+            let width = collection.bounds.width-24
+            return CGSize(width: width, height: 180)
+        } else {
+            return CGSize(width: 0, height: 0)
+        }
     }
 }

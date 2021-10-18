@@ -82,7 +82,6 @@
                                                         <constraint firstAttribute="trailing" secondItem="IOJ-by-vor" secondAttribute="trailing" id="MFz-pt-que"/>
                                                         <constraint firstItem="sIu-pd-LKi" firstAttribute="top" secondItem="Dap-2S-L3s" secondAttribute="bottom" id="Rml-U3-2pz"/>
                                                         <constraint firstItem="Dap-2S-L3s" firstAttribute="top" secondItem="0BJ-wa-96a" secondAttribute="top" constant="11" id="Wma-Dt-VHd"/>
-                                                        <constraint firstAttribute="height" constant="180" id="YxU-v1-Xc4"/>
                                                         <constraint firstItem="IOJ-by-vor" firstAttribute="top" secondItem="0BJ-wa-96a" secondAttribute="top" id="cng-4u-cK4"/>
                                                         <constraint firstAttribute="bottom" secondItem="W5I-7j-ptj" secondAttribute="bottom" id="fMH-O3-ECu"/>
                                                         <constraint firstAttribute="bottom" secondItem="sIu-pd-LKi" secondAttribute="bottom" constant="8" id="hMK-q4-HDd"/>
@@ -764,14 +763,14 @@
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="rtt-v7-kni">
-                                                                                <rect key="frame" x="12" y="8" width="231" height="163"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="255" height="171"/>
                                                                             </imageView>
                                                                         </subviews>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="trailing" secondItem="rtt-v7-kni" secondAttribute="trailing" constant="12" id="IeB-3h-T3F"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="rtt-v7-kni" secondAttribute="trailing" id="IeB-3h-T3F"/>
                                                                             <constraint firstAttribute="bottom" secondItem="rtt-v7-kni" secondAttribute="bottom" id="Wks-G4-OzE"/>
-                                                                            <constraint firstItem="rtt-v7-kni" firstAttribute="leading" secondItem="aTS-4C-DQz" secondAttribute="leading" constant="12" id="mig-T4-SO7"/>
-                                                                            <constraint firstItem="rtt-v7-kni" firstAttribute="top" secondItem="aTS-4C-DQz" secondAttribute="top" constant="8" id="wgO-wR-up8"/>
+                                                                            <constraint firstItem="rtt-v7-kni" firstAttribute="leading" secondItem="aTS-4C-DQz" secondAttribute="leading" id="mig-T4-SO7"/>
+                                                                            <constraint firstItem="rtt-v7-kni" firstAttribute="top" secondItem="aTS-4C-DQz" secondAttribute="top" id="wgO-wR-up8"/>
                                                                         </constraints>
                                                                     </collectionViewCellContentView>
                                                                     <size key="customSize" width="255" height="171"/>
