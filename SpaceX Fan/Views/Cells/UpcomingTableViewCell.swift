@@ -24,12 +24,12 @@ class UpcomingTableViewCell: UITableViewCell {
         exploreButtonWhite.layer.cornerRadius = 22
         exploreButtonColored.layer.borderWidth = 0.3
         exploreButtonColored.layer.borderColor = UIColor.exploreButtonBorderColor.cgColor
+        upcomingImage.image = nil
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
     @IBAction func exploreButtonClicked() {
@@ -53,8 +53,16 @@ class UpcomingTableViewCell: UITableViewCell {
             titleBottomLabel.text = upcoming.getName().uppercased()
         }
         
-        upcomingImage.image = UIImage(named: "image2")?.blend(with: UIImage.background!)
-        upcomingImage.contentMode = .scaleToFill
+        let images = upcoming.getLinks()
+        
+        if !images.isEmpty {
+            upcomingImage.sd_setImage(with: URL(string: images.first!)) { (image, _, _, _) in
+                if let image = image {
+                    self.upcomingImage.image = image.blend(with: UIImage.background!)
+                    self.upcomingImage.contentMode = .scaleToFill
+                }
+            }
+        }
     }
     
     override func prepareForReuse() {
@@ -62,8 +70,7 @@ class UpcomingTableViewCell: UITableViewCell {
         titleBottomLabel.isHidden = true
         exploreButtonWhite.isHidden = true
         titleTopLabel.isHidden = true
-        //TODO: open it later
-        //upcomingImage.image = nil
+        upcomingImage.image = nil
     }
 
 }

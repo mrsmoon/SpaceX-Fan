@@ -69,6 +69,10 @@ class RocketDetailTableViewCell: UITableViewCell {
             diameterView.addBottomBorder(with: .gray, andWidth: 1)
             massView.addTopBorder(with: .gray, andWidth: 1)
             massView.addBottomBorder(with: .gray, andWidth: 1)
+            
+            if let images = rocket?.getImages(), !images.isEmpty {
+                rocketImage.sd_setImage(with: URL(string: images.first!), completed: nil)
+            }
         }
     }
     
@@ -114,11 +118,21 @@ class RocketDetailTableViewCell: UITableViewCell {
 
 extension RocketDetailTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.currentRocket?.images.count ?? 0
+        if let imageCount = viewModel.currentRocket?.images.count {
+            if imageCount > 1 {
+                return imageCount - 1
+            }
+        }
+        
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.imageCellIdentifier, for: indexPath) as! ImageCollectionViewCell
+        
+        if let images = rocket?.getImages(), !images.isEmpty {
+            cell.imageView.sd_setImage(with: URL(string: images[indexPath.row + 1]), completed: nil)
+        }
         
         return cell
     }

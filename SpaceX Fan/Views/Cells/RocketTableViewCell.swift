@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class RocketTableViewCell: UITableViewCell {
 
@@ -18,6 +19,9 @@ class RocketTableViewCell: UITableViewCell {
             rocketNameLabel.text = rocket?.getName().uppercased()
             let starImage = isFavorite ? UIImage.starFill : UIImage.star
             starButton.setImage(starImage, for: .normal)
+            if let images = rocket?.getImages(), !images.isEmpty {
+                rocketImage.sd_setImage(with: URL(string: images.first!), completed: nil)
+            }
         }
     }
     
@@ -27,13 +31,12 @@ class RocketTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+      
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
     @IBAction func starPressed(_ sender: UIButton) {
@@ -46,13 +49,10 @@ class RocketTableViewCell: UITableViewCell {
         if let clicked = starClicked {
             clicked()
         }
-        
-        
-        //TODO: Update favorite rocket list
     }
     
-//    override func prepareForReuse() {
-//        rocketNameLabel.text = ""
-//        rocketImage.image = nil
-//    }
+    override func prepareForReuse() {
+        rocketNameLabel.text = ""
+        rocketImage.image = nil
+    }
 }

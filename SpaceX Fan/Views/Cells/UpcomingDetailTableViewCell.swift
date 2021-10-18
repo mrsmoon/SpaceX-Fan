@@ -17,24 +17,32 @@ class UpcomingDetailTableViewCell: UITableViewCell {
     
     var upcoming: UpcomingModel? {
         didSet {
-            titleLabel.text = upcoming?.getName()
+            titleLabel.text = upcoming?.getName().uppercased()
             detailsLabel.text = upcoming?.getDetails()
             if let date = upcoming?.getDate() {
                 numberLabel.text = date.0 >= 1 ? String(date.0) : ""
                 timeLabel.text = date.0 > 1 ? date.1.uppercased() + "S" : date.1.uppercased()
             }
             
-            upcomingImage.image = UIImage(named: "image2")?.blend(with: UIImage.background!)
-            upcomingImage.contentMode = .scaleToFill
+            let images = upcoming!.getLinks()
             
-            upcomingImage2.image = UIImage(named: "image1")?.blend(with: UIImage.background!)
-            upcomingImage2.contentMode = .scaleToFill
+            if !images.isEmpty {
+                upcomingImage.sd_setImage(with: URL(string: images.first!)) { (image, _, _, _) in
+                    if let image = image {
+                        self.upcomingImage.image = image.blend(with: UIImage.background!)
+                        self.upcomingImage.contentMode = .scaleToFill
+                    }
+                }
+            }
         }
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        upcomingImage.image = nil
+        upcomingImage2.image = nil
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

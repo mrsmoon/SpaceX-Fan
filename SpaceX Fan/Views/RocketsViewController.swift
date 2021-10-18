@@ -29,6 +29,8 @@ class RocketsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         viewModel.delegate = self
+        
+        tableView.rowHeight = 180
     }
     
     func configureNavigationBar() {

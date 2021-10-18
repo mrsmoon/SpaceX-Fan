@@ -28,6 +28,8 @@ class FavoritesViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.rowHeight = 180
     }
     
     func configureNavigationBar() {
