@@ -101,6 +101,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="bgImageView" destination="W5I-7j-ptj" id="4rr-Ma-Uj0"/>
                                             <outlet property="rocketImage" destination="sIu-pd-LKi" id="Wq8-tm-njU"/>
                                             <outlet property="rocketNameLabel" destination="Dap-2S-L3s" id="szb-VS-95M"/>
                                             <outlet property="starButton" destination="IOJ-by-vor" id="E5E-8R-N7f"/>
@@ -647,15 +648,15 @@
                                 <rect key="frame" x="0.0" y="101" width="414" height="795"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RocketDetailCell" rowHeight="790" id="K38-S4-0VT" customClass="RocketDetailTableViewCell" customModule="SpaceX_Fan" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="790"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RocketDetailCell" rowHeight="1100" id="K38-S4-0VT" customClass="RocketDetailTableViewCell" customModule="SpaceX_Fan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="1100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K38-S4-0VT" id="oGc-eX-6YV">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="790"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="1100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vrI-5s-3KM">
-                                                    <rect key="frame" x="8" y="0.0" width="398" height="784"/>
+                                                    <rect key="frame" x="8" y="0.0" width="398" height="1094"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SpacexFalconHeavyPngTransparentPngCopy" translatesAutoresizingMaskIntoConstraints="NO" id="OJX-dX-SYd">
                                                             <rect key="frame" x="4" y="13" width="329" height="141"/>
@@ -743,10 +744,10 @@
                                                             </subviews>
                                                         </stackView>
                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qVX-19-I3i">
-                                                            <rect key="frame" x="12" y="455" width="374" height="300"/>
+                                                            <rect key="frame" x="12" y="455" width="374" height="380"/>
                                                             <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="0.099600561539999993" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="300" id="ekS-wC-8tc"/>
+                                                                <constraint firstAttribute="height" constant="380" id="ekS-wC-8tc"/>
                                                             </constraints>
                                                             <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vwm-45-C8Q">
                                                                 <size key="itemSize" width="255" height="171"/>

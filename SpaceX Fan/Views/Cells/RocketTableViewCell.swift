@@ -13,12 +13,14 @@ class RocketTableViewCell: UITableViewCell {
     @IBOutlet weak var rocketNameLabel: UILabel!
     @IBOutlet weak var starButton: UIButton!
     @IBOutlet weak var rocketImage: UIImageView!
+    @IBOutlet weak var bgImageView: UIImageView!
     
     var rocket: RocketData? {
         didSet {
             rocketNameLabel.text = rocket?.getName().uppercased()
             let starImage = isFavorite ? UIImage.starFill : UIImage.star
             starButton.setImage(starImage, for: .normal)
+            rocketImage.layer.cornerRadius = 16
             if let images = rocket?.getImages(), !images.isEmpty {
                 rocketImage.sd_setImage(with: URL(string: images.first!), completed: nil)
             }
@@ -32,11 +34,12 @@ class RocketTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
       
+        rocketNameLabel.text = ""
+        rocketImage.image = nil
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
 
     @IBAction func starPressed(_ sender: UIButton) {

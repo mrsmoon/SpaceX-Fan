@@ -80,7 +80,7 @@ extension FavoritesViewController: UITableViewDataSource {
         let rocket = viewModel.currentFavorites![indexPath.row]
         cell.isFavorite = viewModel.isRocketInFavorites(rocket)
         
-        cell.rocketNameLabel.text = rocket.getName().uppercased()
+        cell.rocket = rocket
         
         cell.starClicked = {
             self.viewModel.updateFavoriteList(withStatusOf: rocket)
