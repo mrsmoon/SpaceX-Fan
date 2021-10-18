@@ -11,7 +11,7 @@ class UpcomingViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let viewModel = UpcomingViewModel()
+    let viewModel = UpcomingViewModel.shared
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.subscribe()
