@@ -620,7 +620,7 @@
                                                     <constraint firstAttribute="width" constant="280" id="fZ7-AX-ztc"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitmap" translatesAutoresizingMaskIntoConstraints="NO" id="3Ld-Sn-RQB">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="space-x-starship" translatesAutoresizingMaskIntoConstraints="NO" id="3Ld-Sn-RQB">
                                                 <rect key="frame" x="0.0" y="516" width="280" height="140"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="280" id="cXN-ht-l4e"/>
@@ -1115,6 +1115,7 @@
         <image name="image1" width="375" height="375"/>
         <image name="image2" width="375" height="344"/>
         <image name="mainBackground" width="381" height="818"/>
+        <image name="space-x-starship" width="327" height="122"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
