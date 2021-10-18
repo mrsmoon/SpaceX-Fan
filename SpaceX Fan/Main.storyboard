@@ -826,64 +826,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tQs-fo-8I1">
-                                <rect key="frame" x="19" y="816" width="376" height="50"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="Fta-2K-3s5">
-                                        <rect key="frame" x="0.0" y="0.0" width="376" height="50"/>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tQV-tJ-VtL">
-                                        <rect key="frame" x="44" y="1.5" width="288" height="47"/>
-                                        <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOt-wt-qKC">
-                                                <rect key="frame" x="0.0" y="0.0" width="48" height="47"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="48" id="bcC-WS-Nom"/>
-                                                    <constraint firstAttribute="height" constant="47" id="nnI-IR-BJy"/>
-                                                </constraints>
-                                                <state key="normal" image="barsTabBarElementsItemsActivePressed"/>
-                                            </button>
-                                            <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTq-hI-Khz">
-                                                <rect key="frame" x="120" y="0.0" width="48" height="47"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="48" id="7Ah-PZ-GMI"/>
-                                                    <constraint firstAttribute="height" constant="47" id="age-dL-YaW"/>
-                                                </constraints>
-                                                <state key="normal" image="barsTabBarElementsItemsEnabled"/>
-                                            </button>
-                                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z46-J3-mCM">
-                                                <rect key="frame" x="240" y="0.0" width="48" height="47"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="47" id="h6A-CZ-Juk"/>
-                                                    <constraint firstAttribute="width" constant="48" id="v7B-sE-J2n"/>
-                                                </constraints>
-                                                <state key="normal" image="barsTabBarElementsItemsEnabled-1"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="Fta-2K-3s5" firstAttribute="leading" secondItem="tQs-fo-8I1" secondAttribute="leading" id="19g-xi-cgF"/>
-                                    <constraint firstItem="tQV-tJ-VtL" firstAttribute="leading" secondItem="tQs-fo-8I1" secondAttribute="leading" constant="44" id="DRC-BP-EQK"/>
-                                    <constraint firstItem="tQV-tJ-VtL" firstAttribute="centerY" secondItem="tQs-fo-8I1" secondAttribute="centerY" id="FqT-fJ-C8c"/>
-                                    <constraint firstAttribute="trailing" secondItem="Fta-2K-3s5" secondAttribute="trailing" id="Fw0-Bi-0gh"/>
-                                    <constraint firstAttribute="height" constant="50" id="Hcr-gu-p8x"/>
-                                    <constraint firstAttribute="bottom" secondItem="Fta-2K-3s5" secondAttribute="bottom" id="IlG-DO-1D1"/>
-                                    <constraint firstItem="Fta-2K-3s5" firstAttribute="top" secondItem="tQs-fo-8I1" secondAttribute="top" id="KUC-GF-pbL"/>
-                                    <constraint firstAttribute="trailing" secondItem="tQV-tJ-VtL" secondAttribute="trailing" constant="44" id="ctt-rF-9jl"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="F09-U6-Q2Y"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="dCI-lh-iDj" secondAttribute="bottom" id="G3F-WU-7Ea"/>
-                            <constraint firstItem="tQs-fo-8I1" firstAttribute="leading" secondItem="F09-U6-Q2Y" secondAttribute="leading" constant="19" id="IDr-jz-YC3"/>
-                            <constraint firstItem="F09-U6-Q2Y" firstAttribute="trailing" secondItem="tQs-fo-8I1" secondAttribute="trailing" constant="19" id="JQA-mk-nRn"/>
                             <constraint firstAttribute="trailing" secondItem="Jd0-1l-awq" secondAttribute="trailingMargin" id="LHB-Bj-4xs"/>
                             <constraint firstItem="dCI-lh-iDj" firstAttribute="trailing" secondItem="F09-U6-Q2Y" secondAttribute="trailing" id="NFH-Kn-PDy"/>
-                            <constraint firstAttribute="bottom" secondItem="tQs-fo-8I1" secondAttribute="bottom" constant="30" id="RIz-Ar-Gku"/>
                             <constraint firstItem="Jd0-1l-awq" firstAttribute="leadingMargin" secondItem="3SS-Hq-Y0N" secondAttribute="leading" id="Rik-V4-Hk0"/>
                             <constraint firstItem="dCI-lh-iDj" firstAttribute="leading" secondItem="F09-U6-Q2Y" secondAttribute="leading" id="SC0-Mn-UyJ"/>
                             <constraint firstAttribute="bottom" secondItem="Jd0-1l-awq" secondAttribute="bottomMargin" id="SrE-ny-gO7"/>
@@ -1021,54 +970,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ge3-Pf-FwF">
-                                <rect key="frame" x="19" y="762" width="376" height="50"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="t0K-2k-sxS">
-                                        <rect key="frame" x="0.0" y="0.0" width="376" height="50"/>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YUW-yK-m9i">
-                                        <rect key="frame" x="44" y="1.5" width="288" height="47"/>
-                                        <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyw-jU-220">
-                                                <rect key="frame" x="0.0" y="0.0" width="48" height="47"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="47" id="J31-6x-Uja"/>
-                                                    <constraint firstAttribute="width" constant="48" id="bZP-Ee-DaY"/>
-                                                </constraints>
-                                                <state key="normal" image="barsTabBarElementsItemsActivePressed"/>
-                                            </button>
-                                            <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7DK-t3-gRB">
-                                                <rect key="frame" x="120" y="0.0" width="48" height="47"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="48" id="LHq-5e-rg9"/>
-                                                    <constraint firstAttribute="height" constant="47" id="h62-JV-Anj"/>
-                                                </constraints>
-                                                <state key="normal" image="barsTabBarElementsItemsEnabled"/>
-                                            </button>
-                                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9z-La-bFu">
-                                                <rect key="frame" x="240" y="0.0" width="48" height="47"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="48" id="NXQ-77-iRR"/>
-                                                    <constraint firstAttribute="height" constant="47" id="nc4-BL-Obt"/>
-                                                </constraints>
-                                                <state key="normal" image="barsTabBarElementsItemsEnabled-1"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="t0K-2k-sxS" firstAttribute="top" secondItem="Ge3-Pf-FwF" secondAttribute="top" id="4Aw-b0-Hyv"/>
-                                    <constraint firstItem="YUW-yK-m9i" firstAttribute="leading" secondItem="Ge3-Pf-FwF" secondAttribute="leading" constant="44" id="aHZ-zb-PUn"/>
-                                    <constraint firstAttribute="bottom" secondItem="t0K-2k-sxS" secondAttribute="bottom" id="bPE-Hu-6ca"/>
-                                    <constraint firstAttribute="trailing" secondItem="t0K-2k-sxS" secondAttribute="trailing" id="qKo-fJ-7zX"/>
-                                    <constraint firstItem="YUW-yK-m9i" firstAttribute="centerY" secondItem="Ge3-Pf-FwF" secondAttribute="centerY" id="r7K-qX-O4Z"/>
-                                    <constraint firstAttribute="height" constant="50" id="vQG-qX-4wK"/>
-                                    <constraint firstAttribute="trailing" secondItem="YUW-yK-m9i" secondAttribute="trailing" constant="44" id="z1D-jH-eer"/>
-                                    <constraint firstItem="t0K-2k-sxS" firstAttribute="leading" secondItem="Ge3-Pf-FwF" secondAttribute="leading" id="zts-pr-arc"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NSx-Rk-x4A"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1077,10 +978,7 @@
                             <constraint firstItem="xw7-Ce-twF" firstAttribute="top" secondItem="NSx-Rk-x4A" secondAttribute="top" constant="13" id="8sa-ld-yvb"/>
                             <constraint firstItem="JNj-DO-rBb" firstAttribute="leadingMargin" secondItem="amM-km-aYw" secondAttribute="leading" id="C4e-If-qPi"/>
                             <constraint firstAttribute="bottom" secondItem="JNj-DO-rBb" secondAttribute="bottomMargin" id="LYF-u9-fVg"/>
-                            <constraint firstItem="Ge3-Pf-FwF" firstAttribute="leading" secondItem="NSx-Rk-x4A" secondAttribute="leading" constant="19" id="Nlt-Eu-73B"/>
-                            <constraint firstAttribute="bottom" secondItem="Ge3-Pf-FwF" secondAttribute="bottom" constant="30" id="R5s-z6-iQF"/>
                             <constraint firstItem="JNj-DO-rBb" firstAttribute="topMargin" secondItem="amM-km-aYw" secondAttribute="top" id="aAS-jd-ifH"/>
-                            <constraint firstItem="NSx-Rk-x4A" firstAttribute="trailing" secondItem="Ge3-Pf-FwF" secondAttribute="trailing" constant="19" id="guH-vu-921"/>
                             <constraint firstItem="xw7-Ce-twF" firstAttribute="trailing" secondItem="NSx-Rk-x4A" secondAttribute="trailing" id="lnq-PD-3Vl"/>
                             <constraint firstItem="xw7-Ce-twF" firstAttribute="leading" secondItem="NSx-Rk-x4A" secondAttribute="leading" id="roY-TC-oVD"/>
                             <constraint firstAttribute="bottom" secondItem="xw7-Ce-twF" secondAttribute="bottom" id="twh-86-JA7"/>
