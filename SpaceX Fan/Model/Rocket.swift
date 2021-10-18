@@ -20,6 +20,7 @@ import RealmSwift
     let payload = List<PayLoad>()
     let images = List<String>()
     dynamic var rocketDescription: String = ""
+    dynamic var isFavorite: Bool = false
     
     func getId() -> String {
         return id

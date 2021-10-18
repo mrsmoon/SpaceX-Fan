@@ -82,6 +82,8 @@ class RocketManager: RocketProtocol {
                 let rockets = try decoder.decode(Rockets.self, from: jsonData)
                 print("Rockets are fecthed: \(rockets)")
                 
+                realmStore.saveRockets(rockets)
+                
                 completionHandler(rockets, nil)
             } catch {
                 print("Error parsing rockets: \(error)")
@@ -126,14 +128,18 @@ class RocketManager: RocketProtocol {
         return favoriteRockets
     }
     
-    func addFavoriteRocket(_ rocket: Rocket) {
-        realmStore.saveFavoriteRocket(rocket)
-    }
     
-    func removeFavoriteRocket(_ rocket: Rocket) {
-        let result = favoriteRockets.filter("id CONTAINS %@", rocket.getId())
-        realmStore.removeFavoriteRocket(result.elements.first!)
+    func updateFavoriteStatus(_ rocket: RocketData) {
+        realmStore.updateRocketStatus(rocket)
     }
+//    func addFavoriteRocket(_ rocket: Rocket) {
+//        realmStore.saveFavoriteRocket(rocket)
+//    }
+//
+//    func removeFavoriteRocket(_ rocket: Rocket) {
+//        let result = favoriteRockets.filter("id CONTAINS %@", rocket.getId())
+//        realmStore.removeFavoriteRocket(result.elements.first!)
+//    }
     
     func isExistsInFavorites(rocketId: String) -> Bool {
         return favoriteRockets.contains { $0.id == rocketId }
