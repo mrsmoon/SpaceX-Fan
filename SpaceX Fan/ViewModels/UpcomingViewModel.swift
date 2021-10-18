@@ -13,8 +13,12 @@ protocol UpcomingViewModelDelegate {
 
 class UpcomingViewModel {
     
+    static let shared = UpcomingViewModel()
+    
     func subscribe() {
-        fetchUpcomings()
+        if upcomings.isEmpty {
+            fetchUpcomings()
+        }
     }
     
     let manager = RocketManager.shared

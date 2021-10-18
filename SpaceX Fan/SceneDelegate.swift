@@ -41,6 +41,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to undo the changes made on entering the background.
         
         RocketViewModel.shared.fetchRockets()
+        UpcomingViewModel.shared.fetchUpcomings()
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
