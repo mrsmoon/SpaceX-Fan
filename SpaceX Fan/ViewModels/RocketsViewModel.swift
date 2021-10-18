@@ -17,9 +17,11 @@ class RocketViewModel {
     static let shared = RocketViewModel()
     
     func subscribe() {
-        if rockets.isEmpty {
+        if rockets == nil {
             fetchRockets()
+            getRockets()
         } else {
+            rockets = manager.getRockets()
             self.delegate?.rocketsFetched()
         }
     }
@@ -28,24 +30,24 @@ class RocketViewModel {
     }
     
     let manager = RocketManager.shared
-    var rockets = Rockets()
-    
-    var favorites: Favorites {
-        return manager.getFavoriteRockets()
-    }
+    var rockets: SpaceXRockets?
     
     var delegate: RocketViewModelDelegate?
     
-    var selectedRocket: Rocket? {
+    var selectedRocket: RocketData? {
         didSet {
             manager.setCurrentRocket(selectedRocket!)
         }
     }
     
+    func getRockets() {
+        rockets = manager.getRockets()
+        print("ROCKETS: \(rockets)")
+    }
+    
     func fetchRockets() {
         manager.getAllRockets { (rockets, error) in
             if let rockets = rockets {
-                self.rockets = rockets
                 self.delegate?.rocketsFetched()
             } else {
                 self.delegate?.rocketFetchingDidFail()
@@ -53,15 +55,11 @@ class RocketViewModel {
         }
     }
     
-    func isRocketInFavorites(_ rocket: RocketModel) -> Bool  {
+    func isRocketInFavorites(_ rocket: RocketData) -> Bool  {
         return manager.isExistsInFavorites(rocketId: rocket.getId())
     }
     
-    func updateFavoriteList(withStatusOf rocket: RocketModel) {
-        if isRocketInFavorites(rocket) {
-            manager.removeFavoriteRocket(rocket)
-        } else {
-            manager.addFavoriteRocket(rocket)
-        }
+    func updateFavoriteList(withStatusOf rocket: RocketData) {
+        manager.updateFavoriteStatus(rocket)
     }
 }

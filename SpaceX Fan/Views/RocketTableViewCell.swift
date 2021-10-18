@@ -13,7 +13,7 @@ class RocketTableViewCell: UITableViewCell {
     @IBOutlet weak var starButton: UIButton!
     @IBOutlet weak var rocketImage: UIImageView!
     
-    var rocket: RocketModel? {
+    var rocket: RocketData? {
         didSet {
             rocketNameLabel.text = rocket?.getName().uppercased()
             let starImage = isFavorite ? UIImage.starFill : UIImage.star

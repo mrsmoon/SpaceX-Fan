@@ -186,11 +186,12 @@
                     <navigationItem key="navigationItem" title="SpaceX Rockets" id="Eny-mN-bkd"/>
                     <connections>
                         <outlet property="tableView" destination="lPL-GY-bCy" id="GLb-kK-3cf"/>
+                        <segue destination="WHz-JW-FjV" kind="show" identifier="RocketSegue" id="Wyq-E1-DmY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-528.98550724637687" y="166.74107142857142"/>
+            <point key="canvasLocation" x="-616" y="171"/>
         </scene>
         <!--Upcoming Detail View Controller-->
         <scene sceneID="1nE-40-l59">
@@ -625,14 +626,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ih-Sm-AxN" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="RocketDetailVC" id="WHz-JW-FjV" userLabel="Rocket Detail View Controller" customClass="RocketDetailViewController" customModule="SpaceX_Fan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3SS-Hq-Y0N">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Jd0-1l-awq">
-                                <rect key="frame" x="-8" y="-8" width="430" height="892"/>
+                                <rect key="frame" x="-8" y="-96" width="430" height="1034"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="800" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dCI-lh-iDj">
-                                <rect key="frame" x="0.0" y="13" width="414" height="829"/>
+                                <rect key="frame" x="0.0" y="101" width="414" height="795"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RocketDetailCell" rowHeight="790" id="K38-S4-0VT" customClass="RocketDetailTableViewCell" customModule="SpaceX_Fan" customModuleProvider="target">
@@ -815,7 +816,7 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tQs-fo-8I1">
-                                <rect key="frame" x="19" y="762" width="376" height="50"/>
+                                <rect key="frame" x="19" y="816" width="376" height="50"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="Fta-2K-3s5">
                                         <rect key="frame" x="0.0" y="0.0" width="376" height="50"/>
@@ -888,6 +889,9 @@
             <point key="canvasLocation" x="1402.8985507246377" y="166.74107142857142"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Wyq-E1-DmY"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="SpacexFalconHeavyPngTransparentPngCopy" width="308" height="159"/>
         <image name="bar" width="375" height="92"/>

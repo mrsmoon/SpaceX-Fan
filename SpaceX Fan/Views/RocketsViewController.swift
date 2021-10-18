@@ -80,7 +80,7 @@ extension RocketsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        viewModel.selectedRocket = viewModel.rockets[indexPath.row]
+        viewModel.selectedRocket = viewModel.rockets?[indexPath.row]
         
         performSegue(withIdentifier: Constants.rocketSegueIdentifier, sender: self)
     }
@@ -90,18 +90,19 @@ extension RocketsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.rocketCellIdentifier) as! RocketTableViewCell
-        let rocket = viewModel.rockets[indexPath.row]
-        cell.isFavorite = viewModel.isRocketInFavorites(rocket)
-        cell.rocket = rocket
-        
-        cell.starClicked = {
-            self.viewModel.updateFavoriteList(withStatusOf: rocket)
+        if let rocket = viewModel.rockets?[indexPath.row] {
+            cell.isFavorite = viewModel.isRocketInFavorites(rocket)
+            cell.rocket = rocket
+            
+            cell.starClicked = {
+                self.viewModel.updateFavoriteList(withStatusOf: rocket)
+            }
         }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.rockets.count
+        return viewModel.rockets?.count ?? 0
     }
 }

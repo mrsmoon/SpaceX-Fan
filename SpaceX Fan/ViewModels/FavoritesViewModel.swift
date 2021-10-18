@@ -18,13 +18,13 @@ class FavoritesViewModel {
     func unsubscribe() {
     }
     
-    var currentFavorites: Favorites?
+    var currentFavorites: SpaceXRockets?
     
     let manager = RocketManager.shared
     
     var selectedRocket: RocketData? {
         didSet {
-            manager.setCurrentFavorite(selectedRocket!)
+            manager.setCurrentRocket(selectedRocket!)
         }
     }
     
@@ -37,11 +37,7 @@ class FavoritesViewModel {
     }
     
     func updateFavoriteList(withStatusOf rocket: RocketData) {
-        if isRocketInFavorites(rocket) {
-            manager.realmStore.removeFavoriteRocket(rocket)
-        } else {
-            manager.realmStore.addFavoriteRocket(rocket)
-        }
+        manager.updateFavoriteStatus(rocket)
     }
     
 }

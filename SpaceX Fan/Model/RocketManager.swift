@@ -13,47 +13,34 @@ typealias Rockets = [RocketModel]
 typealias UpcomingLaunches = [UpcomingModel]
 typealias RocketsCallBack = (Rockets?, APIError?) -> Void
 typealias UpcomingCallBack = (UpcomingLaunches?, APIError?) -> Void
-typealias Favorites = Results<RocketData>
+typealias SpaceXRockets = Results<RocketData>
 
 protocol RocketProtocol {
     func getAllRockets(completionHandler: @escaping RocketsCallBack)
     func getAllUpcomingLaunches(completionHandler: @escaping UpcomingCallBack)
-    func getFavoriteRockets() -> Favorites
+    func getFavoriteRockets() -> SpaceXRockets
 }
 
 class RocketManager: RocketProtocol {
     static let shared = RocketManager()
     
-    private var latestRockets: Rockets?
-    private var currentRocket: Rocket?
-    private var currentFavorite: RocketData?
+    private var currentRocket: RocketData?
     private var currentUpcomingLaunch: UpcomingModel?
-    private var favoriteRockets: Favorites {
-        realmStore.loadFavorites()
-    }
     
     var realmStore = RealmStore.shared
     
     //MARK: - All Rockets
     
-    func getRockets() -> Rockets? {
-        return latestRockets
+    func getRockets() -> SpaceXRockets? {
+        realmStore.loadRockets()
     }
     
-    func getCurrentRocket() -> Rocket? {
+    func getCurrentRocket() -> RocketData? {
         return currentRocket
     }
     
-    func setCurrentRocket(_ rocket: Rocket) {
+    func setCurrentRocket(_ rocket: RocketData) {
         currentRocket = rocket
-    }
-    
-    func getCurrentFavorite() -> RocketData? {
-        return currentFavorite
-    }
-    
-    func setCurrentFavorite(_ rocket: RocketData) {
-        currentFavorite = rocket
     }
     
     func getCurrentUpcomingLaunch() -> UpcomingModel? {
@@ -81,9 +68,7 @@ class RocketManager: RocketProtocol {
                 let decoder = JSONDecoder()
                 let rockets = try decoder.decode(Rockets.self, from: jsonData)
                 print("Rockets are fecthed: \(rockets)")
-                
-                realmStore.saveRockets(rockets)
-                
+                self.realmStore.saveRockets(rockets)
                 completionHandler(rockets, nil)
             } catch {
                 print("Error parsing rockets: \(error)")
@@ -124,8 +109,8 @@ class RocketManager: RocketProtocol {
     
     //MARK: - Favorites
     
-    func getFavoriteRockets() -> Favorites {
-        return favoriteRockets
+    func getFavoriteRockets() -> SpaceXRockets {
+        realmStore.loadFavorites()
     }
     
     
@@ -142,7 +127,8 @@ class RocketManager: RocketProtocol {
 //    }
     
     func isExistsInFavorites(rocketId: String) -> Bool {
-        return favoriteRockets.contains { $0.id == rocketId }
+        let favorites = getFavoriteRockets()
+        return favorites.contains { $0.id == rocketId }
     }
     
 }

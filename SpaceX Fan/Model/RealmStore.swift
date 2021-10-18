@@ -10,7 +10,6 @@ import RealmSwift
 
 class RealmStore {
     static let shared = RealmStore()
-    let realm = try! Realm()
     
     func saveFavoriteRocket(_ rocket: Rocket) {
         let realm = try! Realm()
@@ -42,6 +41,7 @@ class RealmStore {
     }
     
     func saveRockets(_ rockets: Rockets) {
+        let realm = try! Realm()
         let storedRockets = realm.objects(RocketData.self)
         rockets.forEach { (rocket) in
             if !storedRockets.contains(where: { (data) -> Bool in
@@ -50,15 +50,7 @@ class RealmStore {
                 saveFavoriteRocket(rocket)
             }
         }
-        
     }
-    
-//    func addFavoriteRocket(_ rocket: RocketData) {
-//        let realm = try! Realm()
-//        try! realm.write {
-//            realm.add(rocket)
-//        }
-//    }
 
     func updateRocketStatus(_ rocket: RocketData) {
         let realm = try! Realm()
@@ -67,17 +59,17 @@ class RealmStore {
         }
     }
     
-    func loadRockets() -> Favorites {
+    func loadRockets() -> SpaceXRockets {
         
         let realm = try! Realm()
         
         return realm.objects(RocketData.self)
     }
     
-    func loadFavorites() -> Favorites {
+    func loadFavorites() -> SpaceXRockets {
         
         let realm = try! Realm()
         
-        return realm.objects(RocketData.self).filter("isFavorite CONTAINS %@", true)
+        return realm.objects(RocketData.self).filter("isFavorite = %@", true)
     }
 }
