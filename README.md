@@ -68,7 +68,7 @@ user taps an item on this custom view, I have changed the root view controller o
 
 - Whenever App goes background and comes foreground again, the API call method for fetching all rocket information is called, which refreshs data on persistent storage if there is any new rocket info. Upcoming launches are also fetched again from SPaceX server when scene will enter foreground. Instead of loading all rocket and upcoming data from server during each display, it is more reasonable and effective to fetch the data at the first launch and whenever screen comes foreground.
 
-
+*Final Note: Please run `pod install` after making a pull request. Remote repository does not include pods because of large file sizes.*
 
 
 
