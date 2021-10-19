@@ -53,6 +53,8 @@ class UpcomingViewController: UIViewController {
     }
 }
 
+//MARK: - UpcomingViewModelDelegate
+
 extension UpcomingViewController: UpcomingViewModelDelegate {
     func upcomingsFetched() {
         DispatchQueue.main.async { [weak self] in
@@ -61,11 +63,15 @@ extension UpcomingViewController: UpcomingViewModelDelegate {
     }
 }
 
+//MARK: - UITableViewDelegate
+
 extension UpcomingViewController: UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 }
+
+//MARK: - UITableViewDataSource
 
 extension UpcomingViewController: UITableViewDataSource {
     

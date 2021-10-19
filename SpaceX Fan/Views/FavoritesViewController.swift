@@ -63,6 +63,8 @@ class FavoritesViewController: UIViewController {
     }
 }
 
+//MARK: - UITableViewDelegate
+
 extension FavoritesViewController: UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -75,6 +77,8 @@ extension FavoritesViewController: UITableViewDelegate {
         performSegue(withIdentifier: Constants.favoriteSegueIdentifier, sender: self)
     }
 }
+
+//MARK: - UITableViewDataSource
 
 extension FavoritesViewController: UITableViewDataSource {
     

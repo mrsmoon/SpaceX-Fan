@@ -116,6 +116,8 @@ class RocketDetailTableViewCell: UITableViewCell {
 
 }
 
+//MARK: - UICollectionViewDataSource, UICollectionViewDelegate
+
 extension RocketDetailTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let imageCount = viewModel.currentRocket?.images.count {
@@ -137,6 +139,8 @@ extension RocketDetailTableViewCell: UICollectionViewDataSource, UICollectionVie
         return cell
     }
 }
+
+//MARK: - UICollectionViewDelegateFlowLayout
 
 extension RocketDetailTableViewCell: UICollectionViewDelegateFlowLayout {
     

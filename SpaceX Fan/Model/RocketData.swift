@@ -1,5 +1,5 @@
 //
-//  Rocket.swift
+//  RocketData.swift
 //  SpaceX Fan
 //
 //  Created by Sera on 10/17/21.

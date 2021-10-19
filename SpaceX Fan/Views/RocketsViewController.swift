@@ -60,6 +60,8 @@ class RocketsViewController: UIViewController {
     }
 }
 
+//MARK: - RocketViewModelDelegate
+
 extension RocketsViewController: RocketViewModelDelegate {
     func rocketsFetched() {
         DispatchQueue.main.async { [weak self] in
@@ -81,6 +83,8 @@ extension RocketsViewController: RocketViewModelDelegate {
     }
 }
 
+//MARK: - UITableViewDelegate
+
 extension RocketsViewController: UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -93,6 +97,8 @@ extension RocketsViewController: UITableViewDelegate {
         performSegue(withIdentifier: Constants.rocketSegueIdentifier, sender: self)
     }
 }
+
+//MARK: - UITableViewDataSource
 
 extension RocketsViewController: UITableViewDataSource {
     
